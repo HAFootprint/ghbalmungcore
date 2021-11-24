@@ -3,471 +3,789 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 55;
+	objectVersion = 52;
 	objects = {
 
+/* Begin PBXAggregateTarget section */
+		"ghbalmungcore::ghbalmungcorePackageTests::ProductTarget" /* ghbalmungcorePackageTests */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = OBJ_34 /* Build configuration list for PBXAggregateTarget "ghbalmungcorePackageTests" */;
+			buildPhases = (
+			);
+			dependencies = (
+				OBJ_37 /* PBXTargetDependency */,
+			);
+			name = ghbalmungcorePackageTests;
+			productName = ghbalmungcorePackageTests;
+		};
+/* End PBXAggregateTarget section */
+
 /* Begin PBXBuildFile section */
-		922C2F2F274CB00D0013D86E /* ghbalmungcore.docc in Sources */ = {isa = PBXBuildFile; fileRef = 922C2F2E274CB00D0013D86E /* ghbalmungcore.docc */; };
-		922C2F35274CB00D0013D86E /* ghbalmungcore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 922C2F2A274CB00D0013D86E /* ghbalmungcore.framework */; };
-		922C2F3A274CB00D0013D86E /* ghbalmungcoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922C2F39274CB00D0013D86E /* ghbalmungcoreTests.swift */; };
-		922C2F3B274CB00D0013D86E /* ghbalmungcore.h in Headers */ = {isa = PBXBuildFile; fileRef = 922C2F2D274CB00D0013D86E /* ghbalmungcore.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		922C2F8D274DC6D20013D86E /* ghgungnircore in Frameworks */ = {isa = PBXBuildFile; productRef = 922C2F8C274DC6D20013D86E /* ghgungnircore */; };
+		922C2F91274DC8670013D86E /* GHBalmungCoreLocalization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922C2F90274DC8670013D86E /* GHBalmungCoreLocalization.swift */; };
+		922C2F93274DC9B70013D86E /* GHRestType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922C2F92274DC9B70013D86E /* GHRestType.swift */; };
+		922C2F96274DCB500013D86E /* GHCoreType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922C2F95274DCB500013D86E /* GHCoreType.swift */; };
+		922C2F98274DCBAA0013D86E /* GHCoreTypeInjectionExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922C2F97274DCBAA0013D86E /* GHCoreTypeInjectionExtension.swift */; };
+		922C2F9B274DCC500013D86E /* GHEnvironmentType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922C2F9A274DCC500013D86E /* GHEnvironmentType.swift */; };
+		922C2F9D274DCD770013D86E /* GHEnvironmentTypeExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922C2F9C274DCD770013D86E /* GHEnvironmentTypeExtension.swift */; };
+		922C2FA0274DD4A70013D86E /* GHFoundationExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922C2F9F274DD4A70013D86E /* GHFoundationExtension.swift */; };
+		922C2FA3274DD50A0013D86E /* GHCookieModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922C2FA2274DD50A0013D86E /* GHCookieModel.swift */; };
+		922C2FA5274DD5E60013D86E /* GHMetadataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922C2FA4274DD5E60013D86E /* GHMetadataModel.swift */; };
+		922C2FA8274DD7110013D86E /* GHEnvironmentEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922C2FA7274DD7110013D86E /* GHEnvironmentEntity.swift */; };
+		922C2FAA274DD76E0013D86E /* GHGlobalConfigEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922C2FA9274DD76E0013D86E /* GHGlobalConfigEntity.swift */; };
+		922C2FAD274DD7EE0013D86E /* GHStatusStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922C2FAC274DD7EE0013D86E /* GHStatusStorage.swift */; };
+		922C2FB1274DD8C70013D86E /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922C2FB0274DD8C70013D86E /* Reachability.swift */; };
+		922C2FB5274DD9A90013D86E /* GHURLSessionCoreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922C2FB4274DD9A90013D86E /* GHURLSessionCoreManager.swift */; };
+		922C2FB7274DD9F90013D86E /* GHURLSessionCoreManagerTaskExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922C2FB6274DD9F90013D86E /* GHURLSessionCoreManagerTaskExtension.swift */; };
+		922C2FBA274DDA420013D86E /* GHAlamoCoreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922C2FB9274DDA420013D86E /* GHAlamoCoreManager.swift */; };
+		922C2FBD274DDA9C0013D86E /* GHBaseBalmungDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922C2FBC274DDA9C0013D86E /* GHBaseBalmungDelegate.swift */; };
+		922C2FBF274DDAE40013D86E /* GHConnectionBalmungDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922C2FBE274DDAE40013D86E /* GHConnectionBalmungDelegate.swift */; };
+		922C2FC1274DDB560013D86E /* GHCoreBalmungDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922C2FC0274DDB560013D86E /* GHCoreBalmungDelegate.swift */; };
+		922C2FC4274DDD0E0013D86E /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 922C2FC3274DDD0E0013D86E /* Alamofire */; };
+		922C2FC6274DE34F0013D86E /* GHBaseCoreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922C2FC5274DE34F0013D86E /* GHBaseCoreManager.swift */; };
+		922C2FC9274DEA410013D86E /* GHBalmungBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922C2FC8274DEA410013D86E /* GHBalmungBase.swift */; };
+		922C2FCB274DECAE0013D86E /* GHBalmungBaseOperationExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922C2FCA274DECAE0013D86E /* GHBalmungBaseOperationExtension.swift */; };
+		922C2FCD274DED890013D86E /* GHBalmungBaseComplexExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922C2FCC274DED890013D86E /* GHBalmungBaseComplexExtension.swift */; };
+		922C2FCF274DEED80013D86E /* GHBalmungBaseRetryExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922C2FCE274DEED80013D86E /* GHBalmungBaseRetryExtension.swift */; };
+		922C2FD2274DF1960013D86E /* GHRestTypeSettingExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922C2FD1274DF1960013D86E /* GHRestTypeSettingExtension.swift */; };
+		OBJ_25 /* GHDependencyConfigManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_11 /* GHDependencyConfigManager.swift */; };
+		OBJ_32 /* Package.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_6 /* Package.swift */; };
+		OBJ_43 /* ghbalmungcoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_14 /* ghbalmungcoreTests.swift */; };
+		OBJ_45 /* ghbalmungcore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "ghbalmungcore::ghbalmungcore::Product" /* ghbalmungcore.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		922C2F36274CB00D0013D86E /* PBXContainerItemProxy */ = {
+		922C2F89274DC6790013D86E /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 922C2F21274CB00D0013D86E /* Project object */;
+			containerPortal = OBJ_1 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 922C2F29274CB00D0013D86E;
+			remoteGlobalIDString = "ghbalmungcore::ghbalmungcore";
 			remoteInfo = ghbalmungcore;
+		};
+		922C2F8A274DC6790013D86E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = OBJ_1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = "ghbalmungcore::ghbalmungcoreTests";
+			remoteInfo = ghbalmungcoreTests;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		922C2F2A274CB00D0013D86E /* ghbalmungcore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ghbalmungcore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		922C2F2D274CB00D0013D86E /* ghbalmungcore.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ghbalmungcore.h; sourceTree = "<group>"; };
-		922C2F2E274CB00D0013D86E /* ghbalmungcore.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = ghbalmungcore.docc; sourceTree = "<group>"; };
-		922C2F34274CB00D0013D86E /* ghbalmungcoreTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ghbalmungcoreTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		922C2F39274CB00D0013D86E /* ghbalmungcoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ghbalmungcoreTests.swift; sourceTree = "<group>"; };
+		922C2F8E274DC7090013D86E /* ghbalmungcore.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = ghbalmungcore.docc; sourceTree = "<group>"; };
+		922C2F90274DC8670013D86E /* GHBalmungCoreLocalization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GHBalmungCoreLocalization.swift; sourceTree = "<group>"; };
+		922C2F92274DC9B70013D86E /* GHRestType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GHRestType.swift; sourceTree = "<group>"; };
+		922C2F95274DCB500013D86E /* GHCoreType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GHCoreType.swift; sourceTree = "<group>"; };
+		922C2F97274DCBAA0013D86E /* GHCoreTypeInjectionExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GHCoreTypeInjectionExtension.swift; sourceTree = "<group>"; };
+		922C2F9A274DCC500013D86E /* GHEnvironmentType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GHEnvironmentType.swift; sourceTree = "<group>"; };
+		922C2F9C274DCD770013D86E /* GHEnvironmentTypeExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GHEnvironmentTypeExtension.swift; sourceTree = "<group>"; };
+		922C2F9F274DD4A70013D86E /* GHFoundationExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GHFoundationExtension.swift; sourceTree = "<group>"; };
+		922C2FA2274DD50A0013D86E /* GHCookieModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GHCookieModel.swift; sourceTree = "<group>"; };
+		922C2FA4274DD5E60013D86E /* GHMetadataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GHMetadataModel.swift; sourceTree = "<group>"; };
+		922C2FA7274DD7110013D86E /* GHEnvironmentEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GHEnvironmentEntity.swift; sourceTree = "<group>"; };
+		922C2FA9274DD76E0013D86E /* GHGlobalConfigEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GHGlobalConfigEntity.swift; sourceTree = "<group>"; };
+		922C2FAC274DD7EE0013D86E /* GHStatusStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GHStatusStorage.swift; sourceTree = "<group>"; };
+		922C2FB0274DD8C70013D86E /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
+		922C2FB4274DD9A90013D86E /* GHURLSessionCoreManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GHURLSessionCoreManager.swift; sourceTree = "<group>"; };
+		922C2FB6274DD9F90013D86E /* GHURLSessionCoreManagerTaskExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GHURLSessionCoreManagerTaskExtension.swift; sourceTree = "<group>"; };
+		922C2FB9274DDA420013D86E /* GHAlamoCoreManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GHAlamoCoreManager.swift; sourceTree = "<group>"; };
+		922C2FBC274DDA9C0013D86E /* GHBaseBalmungDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GHBaseBalmungDelegate.swift; sourceTree = "<group>"; };
+		922C2FBE274DDAE40013D86E /* GHConnectionBalmungDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GHConnectionBalmungDelegate.swift; sourceTree = "<group>"; };
+		922C2FC0274DDB560013D86E /* GHCoreBalmungDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GHCoreBalmungDelegate.swift; sourceTree = "<group>"; };
+		922C2FC5274DE34F0013D86E /* GHBaseCoreManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GHBaseCoreManager.swift; sourceTree = "<group>"; };
+		922C2FC8274DEA410013D86E /* GHBalmungBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GHBalmungBase.swift; sourceTree = "<group>"; };
+		922C2FCA274DECAE0013D86E /* GHBalmungBaseOperationExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GHBalmungBaseOperationExtension.swift; sourceTree = "<group>"; };
+		922C2FCC274DED890013D86E /* GHBalmungBaseComplexExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GHBalmungBaseComplexExtension.swift; sourceTree = "<group>"; };
+		922C2FCE274DEED80013D86E /* GHBalmungBaseRetryExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GHBalmungBaseRetryExtension.swift; sourceTree = "<group>"; };
+		922C2FD1274DF1960013D86E /* GHRestTypeSettingExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GHRestTypeSettingExtension.swift; sourceTree = "<group>"; };
+		OBJ_11 /* GHDependencyConfigManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GHDependencyConfigManager.swift; sourceTree = "<group>"; };
+		OBJ_14 /* ghbalmungcoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ghbalmungcoreTests.swift; sourceTree = "<group>"; };
+		OBJ_18 /* GHGlobalServiceConfig-info.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "GHGlobalServiceConfig-info.json"; sourceTree = "<group>"; };
+		OBJ_19 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		OBJ_6 /* Package.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
+		OBJ_9 /* ghbalmungcore.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ghbalmungcore.h; sourceTree = "<group>"; };
+		"ghbalmungcore::ghbalmungcore::Product" /* ghbalmungcore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = ghbalmungcore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		"ghbalmungcore::ghbalmungcoreTests::Product" /* ghbalmungcoreTests.xctest */ = {isa = PBXFileReference; lastKnownFileType = file; path = ghbalmungcoreTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		922C2F27274CB00D0013D86E /* Frameworks */ = {
+		OBJ_26 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
+			buildActionMask = 0;
 			files = (
+				922C2F8D274DC6D20013D86E /* ghgungnircore in Frameworks */,
+				922C2FC4274DDD0E0013D86E /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		922C2F31274CB00D0013D86E /* Frameworks */ = {
+		OBJ_44 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
+			buildActionMask = 0;
 			files = (
-				922C2F35274CB00D0013D86E /* ghbalmungcore.framework in Frameworks */,
+				OBJ_45 /* ghbalmungcore.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		922C2F20274CB00D0013D86E = {
+		922C2F8F274DC83B0013D86E /* enum */ = {
 			isa = PBXGroup;
 			children = (
-				922C2F2C274CB00D0013D86E /* ghbalmungcore */,
-				922C2F38274CB00D0013D86E /* ghbalmungcoreTests */,
-				922C2F2B274CB00D0013D86E /* Products */,
+				922C2F90274DC8670013D86E /* GHBalmungCoreLocalization.swift */,
+				922C2FD0274DF16D0013D86E /* GHRestType */,
+				922C2F94274DCB2F0013D86E /* GHCoreType */,
+				922C2F99274DCC230013D86E /* GHEnvironmentType */,
 			);
+			path = enum;
 			sourceTree = "<group>";
 		};
-		922C2F2B274CB00D0013D86E /* Products */ = {
+		922C2F94274DCB2F0013D86E /* GHCoreType */ = {
 			isa = PBXGroup;
 			children = (
-				922C2F2A274CB00D0013D86E /* ghbalmungcore.framework */,
-				922C2F34274CB00D0013D86E /* ghbalmungcoreTests.xctest */,
+				922C2F95274DCB500013D86E /* GHCoreType.swift */,
+				922C2F97274DCBAA0013D86E /* GHCoreTypeInjectionExtension.swift */,
+			);
+			path = GHCoreType;
+			sourceTree = "<group>";
+		};
+		922C2F99274DCC230013D86E /* GHEnvironmentType */ = {
+			isa = PBXGroup;
+			children = (
+				922C2F9A274DCC500013D86E /* GHEnvironmentType.swift */,
+				922C2F9C274DCD770013D86E /* GHEnvironmentTypeExtension.swift */,
+			);
+			path = GHEnvironmentType;
+			sourceTree = "<group>";
+		};
+		922C2F9E274DD4940013D86E /* extension */ = {
+			isa = PBXGroup;
+			children = (
+				922C2F9F274DD4A70013D86E /* GHFoundationExtension.swift */,
+			);
+			path = extension;
+			sourceTree = "<group>";
+		};
+		922C2FA1274DD4EC0013D86E /* model */ = {
+			isa = PBXGroup;
+			children = (
+				922C2FA2274DD50A0013D86E /* GHCookieModel.swift */,
+				922C2FA4274DD5E60013D86E /* GHMetadataModel.swift */,
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
+		922C2FA6274DD6FD0013D86E /* entity */ = {
+			isa = PBXGroup;
+			children = (
+				922C2FA7274DD7110013D86E /* GHEnvironmentEntity.swift */,
+				922C2FA9274DD76E0013D86E /* GHGlobalConfigEntity.swift */,
+			);
+			path = entity;
+			sourceTree = "<group>";
+		};
+		922C2FAB274DD7E00013D86E /* properties */ = {
+			isa = PBXGroup;
+			children = (
+				922C2FAC274DD7EE0013D86E /* GHStatusStorage.swift */,
+			);
+			path = properties;
+			sourceTree = "<group>";
+		};
+		922C2FAE274DD8980013D86E /* thirdparties */ = {
+			isa = PBXGroup;
+			children = (
+				922C2FAF274DD8A80013D86E /* reachability */,
+			);
+			path = thirdparties;
+			sourceTree = "<group>";
+		};
+		922C2FAF274DD8A80013D86E /* reachability */ = {
+			isa = PBXGroup;
+			children = (
+				922C2FB0274DD8C70013D86E /* Reachability.swift */,
+			);
+			path = reachability;
+			sourceTree = "<group>";
+		};
+		922C2FB2274DD9260013D86E /* core */ = {
+			isa = PBXGroup;
+			children = (
+				922C2FC5274DE34F0013D86E /* GHBaseCoreManager.swift */,
+				922C2FB8274DDA340013D86E /* alamo */,
+				922C2FB3274DD9350013D86E /* urlsession */,
+			);
+			path = core;
+			sourceTree = "<group>";
+		};
+		922C2FB3274DD9350013D86E /* urlsession */ = {
+			isa = PBXGroup;
+			children = (
+				922C2FB4274DD9A90013D86E /* GHURLSessionCoreManager.swift */,
+				922C2FB6274DD9F90013D86E /* GHURLSessionCoreManagerTaskExtension.swift */,
+			);
+			path = urlsession;
+			sourceTree = "<group>";
+		};
+		922C2FB8274DDA340013D86E /* alamo */ = {
+			isa = PBXGroup;
+			children = (
+				922C2FB9274DDA420013D86E /* GHAlamoCoreManager.swift */,
+			);
+			path = alamo;
+			sourceTree = "<group>";
+		};
+		922C2FBB274DDA710013D86E /* protocol */ = {
+			isa = PBXGroup;
+			children = (
+				922C2FBC274DDA9C0013D86E /* GHBaseBalmungDelegate.swift */,
+				922C2FBE274DDAE40013D86E /* GHConnectionBalmungDelegate.swift */,
+				922C2FC0274DDB560013D86E /* GHCoreBalmungDelegate.swift */,
+			);
+			path = protocol;
+			sourceTree = "<group>";
+		};
+		922C2FC7274DE9E40013D86E /* implement */ = {
+			isa = PBXGroup;
+			children = (
+				922C2FC8274DEA410013D86E /* GHBalmungBase.swift */,
+				922C2FCC274DED890013D86E /* GHBalmungBaseComplexExtension.swift */,
+				922C2FCE274DEED80013D86E /* GHBalmungBaseRetryExtension.swift */,
+				922C2FCA274DECAE0013D86E /* GHBalmungBaseOperationExtension.swift */,
+			);
+			path = implement;
+			sourceTree = "<group>";
+		};
+		922C2FD0274DF16D0013D86E /* GHRestType */ = {
+			isa = PBXGroup;
+			children = (
+				922C2F92274DC9B70013D86E /* GHRestType.swift */,
+				922C2FD1274DF1960013D86E /* GHRestTypeSettingExtension.swift */,
+			);
+			path = GHRestType;
+			sourceTree = "<group>";
+		};
+		OBJ_10 /* manager */ = {
+			isa = PBXGroup;
+			children = (
+				OBJ_11 /* GHDependencyConfigManager.swift */,
+			);
+			path = manager;
+			sourceTree = "<group>";
+		};
+		OBJ_12 /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				OBJ_13 /* ghbalmungcoreTests */,
+			);
+			name = Tests;
+			sourceTree = SOURCE_ROOT;
+		};
+		OBJ_13 /* ghbalmungcoreTests */ = {
+			isa = PBXGroup;
+			children = (
+				OBJ_14 /* ghbalmungcoreTests.swift */,
+			);
+			name = ghbalmungcoreTests;
+			path = Tests/ghbalmungcoreTests;
+			sourceTree = SOURCE_ROOT;
+		};
+		OBJ_15 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				"ghbalmungcore::ghbalmungcore::Product" /* ghbalmungcore.framework */,
+				"ghbalmungcore::ghbalmungcoreTests::Product" /* ghbalmungcoreTests.xctest */,
 			);
 			name = Products;
-			sourceTree = "<group>";
+			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		922C2F2C274CB00D0013D86E /* ghbalmungcore */ = {
+		OBJ_5 /*  */ = {
 			isa = PBXGroup;
 			children = (
-				922C2F2D274CB00D0013D86E /* ghbalmungcore.h */,
-				922C2F2E274CB00D0013D86E /* ghbalmungcore.docc */,
+				OBJ_6 /* Package.swift */,
+				OBJ_7 /* Sources */,
+				OBJ_12 /* Tests */,
+				OBJ_15 /* Products */,
+				OBJ_18 /* GHGlobalServiceConfig-info.json */,
+				OBJ_19 /* README.md */,
 			);
-			path = ghbalmungcore;
+			name = "";
 			sourceTree = "<group>";
 		};
-		922C2F38274CB00D0013D86E /* ghbalmungcoreTests */ = {
+		OBJ_7 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				922C2F39274CB00D0013D86E /* ghbalmungcoreTests.swift */,
+				OBJ_8 /* ghbalmungcore */,
 			);
-			path = ghbalmungcoreTests;
-			sourceTree = "<group>";
+			name = Sources;
+			sourceTree = SOURCE_ROOT;
+		};
+		OBJ_8 /* ghbalmungcore */ = {
+			isa = PBXGroup;
+			children = (
+				922C2FC7274DE9E40013D86E /* implement */,
+				922C2FBB274DDA710013D86E /* protocol */,
+				922C2FB2274DD9260013D86E /* core */,
+				922C2FAE274DD8980013D86E /* thirdparties */,
+				922C2FAB274DD7E00013D86E /* properties */,
+				922C2FA6274DD6FD0013D86E /* entity */,
+				922C2FA1274DD4EC0013D86E /* model */,
+				922C2F9E274DD4940013D86E /* extension */,
+				922C2F8F274DC83B0013D86E /* enum */,
+				OBJ_10 /* manager */,
+				922C2F8E274DC7090013D86E /* ghbalmungcore.docc */,
+				OBJ_9 /* ghbalmungcore.h */,
+			);
+			name = ghbalmungcore;
+			path = Sources/ghbalmungcore;
+			sourceTree = SOURCE_ROOT;
 		};
 /* End PBXGroup section */
 
-/* Begin PBXHeadersBuildPhase section */
-		922C2F25274CB00D0013D86E /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				922C2F3B274CB00D0013D86E /* ghbalmungcore.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXHeadersBuildPhase section */
-
 /* Begin PBXNativeTarget section */
-		922C2F29274CB00D0013D86E /* ghbalmungcore */ = {
+		"ghbalmungcore::SwiftPMPackageDescription" /* ghbalmungcorePackageDescription */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 922C2F3E274CB00D0013D86E /* Build configuration list for PBXNativeTarget "ghbalmungcore" */;
+			buildConfigurationList = OBJ_28 /* Build configuration list for PBXNativeTarget "ghbalmungcorePackageDescription" */;
 			buildPhases = (
-				922C2F25274CB00D0013D86E /* Headers */,
-				922C2F26274CB00D0013D86E /* Sources */,
-				922C2F27274CB00D0013D86E /* Frameworks */,
-				922C2F28274CB00D0013D86E /* Resources */,
+				OBJ_31 /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ghbalmungcorePackageDescription;
+			productName = ghbalmungcorePackageDescription;
+			productType = "com.apple.product-type.framework";
+		};
+		"ghbalmungcore::ghbalmungcore" /* ghbalmungcore */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = OBJ_21 /* Build configuration list for PBXNativeTarget "ghbalmungcore" */;
+			buildPhases = (
+				OBJ_24 /* Sources */,
+				OBJ_26 /* Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = ghbalmungcore;
+			packageProductDependencies = (
+				922C2F8C274DC6D20013D86E /* ghgungnircore */,
+				922C2FC3274DDD0E0013D86E /* Alamofire */,
+			);
 			productName = ghbalmungcore;
-			productReference = 922C2F2A274CB00D0013D86E /* ghbalmungcore.framework */;
+			productReference = "ghbalmungcore::ghbalmungcore::Product" /* ghbalmungcore.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		922C2F33274CB00D0013D86E /* ghbalmungcoreTests */ = {
+		"ghbalmungcore::ghbalmungcoreTests" /* ghbalmungcoreTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 922C2F41274CB00D0013D86E /* Build configuration list for PBXNativeTarget "ghbalmungcoreTests" */;
+			buildConfigurationList = OBJ_39 /* Build configuration list for PBXNativeTarget "ghbalmungcoreTests" */;
 			buildPhases = (
-				922C2F30274CB00D0013D86E /* Sources */,
-				922C2F31274CB00D0013D86E /* Frameworks */,
-				922C2F32274CB00D0013D86E /* Resources */,
+				OBJ_42 /* Sources */,
+				OBJ_44 /* Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				922C2F37274CB00D0013D86E /* PBXTargetDependency */,
+				OBJ_46 /* PBXTargetDependency */,
 			);
 			name = ghbalmungcoreTests;
 			productName = ghbalmungcoreTests;
-			productReference = 922C2F34274CB00D0013D86E /* ghbalmungcoreTests.xctest */;
+			productReference = "ghbalmungcore::ghbalmungcoreTests::Product" /* ghbalmungcoreTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		922C2F21274CB00D0013D86E /* Project object */ = {
+		OBJ_1 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1310;
-				LastUpgradeCheck = 1310;
-				TargetAttributes = {
-					922C2F29274CB00D0013D86E = {
-						CreatedOnToolsVersion = 13.1;
-					};
-					922C2F33274CB00D0013D86E = {
-						CreatedOnToolsVersion = 13.1;
-					};
-				};
+				LastSwiftMigration = 9999;
+				LastUpgradeCheck = 9999;
 			};
-			buildConfigurationList = 922C2F24274CB00D0013D86E /* Build configuration list for PBXProject "ghbalmungcore" */;
-			compatibilityVersion = "Xcode 13.0";
+			buildConfigurationList = OBJ_2 /* Build configuration list for PBXProject "ghbalmungcore" */;
+			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
-				Base,
 			);
-			mainGroup = 922C2F20274CB00D0013D86E;
-			productRefGroup = 922C2F2B274CB00D0013D86E /* Products */;
+			mainGroup = OBJ_5 /*  */;
+			packageReferences = (
+				922C2F8B274DC6D20013D86E /* XCRemoteSwiftPackageReference "ghgungnircore" */,
+				922C2FC2274DDD0E0013D86E /* XCRemoteSwiftPackageReference "Alamofire" */,
+			);
+			productRefGroup = OBJ_15 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				922C2F29274CB00D0013D86E /* ghbalmungcore */,
-				922C2F33274CB00D0013D86E /* ghbalmungcoreTests */,
+				"ghbalmungcore::ghbalmungcore" /* ghbalmungcore */,
+				"ghbalmungcore::SwiftPMPackageDescription" /* ghbalmungcorePackageDescription */,
+				"ghbalmungcore::ghbalmungcorePackageTests::ProductTarget" /* ghbalmungcorePackageTests */,
+				"ghbalmungcore::ghbalmungcoreTests" /* ghbalmungcoreTests */,
 			);
 		};
 /* End PBXProject section */
 
-/* Begin PBXResourcesBuildPhase section */
-		922C2F28274CB00D0013D86E /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		922C2F32274CB00D0013D86E /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXResourcesBuildPhase section */
-
 /* Begin PBXSourcesBuildPhase section */
-		922C2F26274CB00D0013D86E /* Sources */ = {
+		OBJ_24 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
+			buildActionMask = 0;
 			files = (
-				922C2F2F274CB00D0013D86E /* ghbalmungcore.docc in Sources */,
+				922C2FC6274DE34F0013D86E /* GHBaseCoreManager.swift in Sources */,
+				922C2FB1274DD8C70013D86E /* Reachability.swift in Sources */,
+				922C2FBD274DDA9C0013D86E /* GHBaseBalmungDelegate.swift in Sources */,
+				922C2FCD274DED890013D86E /* GHBalmungBaseComplexExtension.swift in Sources */,
+				922C2F9B274DCC500013D86E /* GHEnvironmentType.swift in Sources */,
+				922C2FA3274DD50A0013D86E /* GHCookieModel.swift in Sources */,
+				OBJ_25 /* GHDependencyConfigManager.swift in Sources */,
+				922C2F93274DC9B70013D86E /* GHRestType.swift in Sources */,
+				922C2FBF274DDAE40013D86E /* GHConnectionBalmungDelegate.swift in Sources */,
+				922C2FC1274DDB560013D86E /* GHCoreBalmungDelegate.swift in Sources */,
+				922C2FAA274DD76E0013D86E /* GHGlobalConfigEntity.swift in Sources */,
+				922C2FC9274DEA410013D86E /* GHBalmungBase.swift in Sources */,
+				922C2FCF274DEED80013D86E /* GHBalmungBaseRetryExtension.swift in Sources */,
+				922C2FB5274DD9A90013D86E /* GHURLSessionCoreManager.swift in Sources */,
+				922C2FAD274DD7EE0013D86E /* GHStatusStorage.swift in Sources */,
+				922C2FCB274DECAE0013D86E /* GHBalmungBaseOperationExtension.swift in Sources */,
+				922C2FBA274DDA420013D86E /* GHAlamoCoreManager.swift in Sources */,
+				922C2F9D274DCD770013D86E /* GHEnvironmentTypeExtension.swift in Sources */,
+				922C2FD2274DF1960013D86E /* GHRestTypeSettingExtension.swift in Sources */,
+				922C2FA8274DD7110013D86E /* GHEnvironmentEntity.swift in Sources */,
+				922C2F91274DC8670013D86E /* GHBalmungCoreLocalization.swift in Sources */,
+				922C2F98274DCBAA0013D86E /* GHCoreTypeInjectionExtension.swift in Sources */,
+				922C2FA5274DD5E60013D86E /* GHMetadataModel.swift in Sources */,
+				922C2FA0274DD4A70013D86E /* GHFoundationExtension.swift in Sources */,
+				922C2F96274DCB500013D86E /* GHCoreType.swift in Sources */,
+				922C2FB7274DD9F90013D86E /* GHURLSessionCoreManagerTaskExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		922C2F30274CB00D0013D86E /* Sources */ = {
+		OBJ_31 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
+			buildActionMask = 0;
 			files = (
-				922C2F3A274CB00D0013D86E /* ghbalmungcoreTests.swift in Sources */,
+				OBJ_32 /* Package.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		OBJ_42 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 0;
+			files = (
+				OBJ_43 /* ghbalmungcoreTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		922C2F37274CB00D0013D86E /* PBXTargetDependency */ = {
+		OBJ_37 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 922C2F29274CB00D0013D86E /* ghbalmungcore */;
-			targetProxy = 922C2F36274CB00D0013D86E /* PBXContainerItemProxy */;
+			target = "ghbalmungcore::ghbalmungcoreTests" /* ghbalmungcoreTests */;
+			targetProxy = 922C2F8A274DC6790013D86E /* PBXContainerItemProxy */;
+		};
+		OBJ_46 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = "ghbalmungcore::ghbalmungcore" /* ghbalmungcore */;
+			targetProxy = 922C2F89274DC6790013D86E /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		922C2F3C274CB00D0013D86E /* Debug */ = {
+		OBJ_22 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_ANALYZER_NONNULL = YES;
-				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_ENABLE_OBJC_WEAK = YES;
-				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_COMMA = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
-				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INFINITE_RECURSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
-				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
-				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
-				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
-				CLANG_WARN_STRICT_PROTOTYPES = YES;
-				CLANG_WARN_SUSPICIOUS_MOVE = YES;
-				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
-				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				COPY_PHASE_STRIP = NO;
 				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				DRIVERKIT_DEPLOYMENT_TARGET = 19.0;
 				ENABLE_TESTABILITY = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu11;
-				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_NO_COMMON_BLOCKS = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
+				);
+				HEADER_SEARCH_PATHS = "$(inherited)";
+				INFOPLIST_FILE = ghbalmungcore.xcodeproj/ghbalmungcore_Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(TOOLCHAIN_DIR)/usr/lib/swift/macosx",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				OTHER_CFLAGS = "$(inherited)";
+				OTHER_LDFLAGS = "$(inherited)";
+				OTHER_SWIFT_FLAGS = "$(inherited)";
+				PRODUCT_BUNDLE_IDENTIFIER = ghbalmungcore;
+				PRODUCT_MODULE_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited)";
+				SWIFT_VERSION = 5.0;
+				TARGET_NAME = ghbalmungcore;
+				TVOS_DEPLOYMENT_TARGET = 9.0;
+				WATCHOS_DEPLOYMENT_TARGET = 2.0;
+			};
+			name = Debug;
+		};
+		OBJ_23 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CURRENT_PROJECT_VERSION = 1;
+				DRIVERKIT_DEPLOYMENT_TARGET = 19.0;
+				ENABLE_TESTABILITY = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
+				);
+				HEADER_SEARCH_PATHS = "$(inherited)";
+				INFOPLIST_FILE = ghbalmungcore.xcodeproj/ghbalmungcore_Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(TOOLCHAIN_DIR)/usr/lib/swift/macosx",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				OTHER_CFLAGS = "$(inherited)";
+				OTHER_LDFLAGS = "$(inherited)";
+				OTHER_SWIFT_FLAGS = "$(inherited)";
+				PRODUCT_BUNDLE_IDENTIFIER = ghbalmungcore;
+				PRODUCT_MODULE_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited)";
+				SWIFT_VERSION = 5.0;
+				TARGET_NAME = ghbalmungcore;
+				TVOS_DEPLOYMENT_TARGET = 9.0;
+				WATCHOS_DEPLOYMENT_TARGET = 2.0;
+			};
+			name = Release;
+		};
+		OBJ_29 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				LD = /usr/bin/true;
+				OTHER_SWIFT_FLAGS = "-swift-version 5 -I $(TOOLCHAIN_DIR)/usr/lib/swift/pm/ManifestAPI -sdk /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.0.sdk -package-description-version 5.5.0";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		OBJ_3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_NS_ASSERTIONS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
 					"$(inherited)",
+					"SWIFT_PACKAGE=1",
+					"DEBUG=1",
 				);
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
-				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
-				MTL_FAST_MATH = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				ONLY_ACTIVE_ARCH = YES;
-				SDKROOT = iphoneos;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				OTHER_SWIFT_FLAGS = "$(inherited) -DXcode";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SUPPORTED_PLATFORMS = "$(AVAILABLE_PLATFORMS)";
+				SUPPORTS_MACCATALYST = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) SWIFT_PACKAGE DEBUG";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
+				USE_HEADERMAP = NO;
 			};
 			name = Debug;
 		};
-		922C2F3D274CB00D0013D86E /* Release */ = {
+		OBJ_30 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_ANALYZER_NONNULL = YES;
-				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_ENABLE_MODULES = YES;
+				LD = /usr/bin/true;
+				OTHER_SWIFT_FLAGS = "-swift-version 5 -I $(TOOLCHAIN_DIR)/usr/lib/swift/pm/ManifestAPI -sdk /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.0.sdk -package-description-version 5.5.0";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		OBJ_35 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+			};
+			name = Debug;
+		};
+		OBJ_36 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+			};
+			name = Release;
+		};
+		OBJ_4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
 				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_ENABLE_OBJC_WEAK = YES;
-				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_COMMA = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
-				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INFINITE_RECURSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
-				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
-				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
-				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
-				CLANG_WARN_STRICT_PROTOTYPES = YES;
-				CLANG_WARN_SUSPICIOUS_MOVE = YES;
-				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
-				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 1;
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				ENABLE_NS_ASSERTIONS = NO;
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu11;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
-				MTL_ENABLE_DEBUG_INFO = NO;
-				MTL_FAST_MATH = YES;
-				SDKROOT = iphoneos;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_OPTIMIZATION_LEVEL = s;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"SWIFT_PACKAGE=1",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				OTHER_SWIFT_FLAGS = "$(inherited) -DXcode";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SUPPORTED_PLATFORMS = "$(AVAILABLE_PLATFORMS)";
+				SUPPORTS_MACCATALYST = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) SWIFT_PACKAGE";
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
+				USE_HEADERMAP = NO;
 			};
 			name = Release;
 		};
-		922C2F3F274CB00D0013D86E /* Debug */ = {
+		OBJ_40 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
+				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = K36NPWS843;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_NSHumanReadableCopyright = "";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				DRIVERKIT_DEPLOYMENT_TARGET = 19.0;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
+				);
+				HEADER_SEARCH_PATHS = "$(inherited)";
+				INFOPLIST_FILE = ghbalmungcore.xcodeproj/ghbalmungcoreTests_Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
-					"@executable_path/Frameworks",
+					"@loader_path/../Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = mx.gipsyhub.ghbalmungcore;
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SKIP_INSTALL = YES;
-				SWIFT_EMIT_LOC_STRINGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
+				OTHER_CFLAGS = "$(inherited)";
+				OTHER_LDFLAGS = "$(inherited)";
+				OTHER_SWIFT_FLAGS = "$(inherited)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGET_NAME = ghbalmungcoreTests;
+				TVOS_DEPLOYMENT_TARGET = 14.0;
+				WATCHOS_DEPLOYMENT_TARGET = 7.0;
 			};
 			name = Debug;
 		};
-		922C2F40274CB00D0013D86E /* Release */ = {
+		OBJ_41 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
+				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = K36NPWS843;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_NSHumanReadableCopyright = "";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				DRIVERKIT_DEPLOYMENT_TARGET = 19.0;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
+				);
+				HEADER_SEARCH_PATHS = "$(inherited)";
+				INFOPLIST_FILE = ghbalmungcore.xcodeproj/ghbalmungcoreTests_Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
-					"@executable_path/Frameworks",
+					"@loader_path/../Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = mx.gipsyhub.ghbalmungcore;
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SKIP_INSTALL = YES;
-				SWIFT_EMIT_LOC_STRINGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
+				OTHER_CFLAGS = "$(inherited)";
+				OTHER_LDFLAGS = "$(inherited)";
+				OTHER_SWIFT_FLAGS = "$(inherited)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Release;
-		};
-		922C2F42274CB00D0013D86E /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = K36NPWS843;
-				GENERATE_INFOPLIST_FILE = YES;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = mx.gipsyhub.ghbalmungcoreTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Debug;
-		};
-		922C2F43274CB00D0013D86E /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = K36NPWS843;
-				GENERATE_INFOPLIST_FILE = YES;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = mx.gipsyhub.ghbalmungcoreTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGET_NAME = ghbalmungcoreTests;
+				TVOS_DEPLOYMENT_TARGET = 14.0;
+				WATCHOS_DEPLOYMENT_TARGET = 7.0;
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		922C2F24274CB00D0013D86E /* Build configuration list for PBXProject "ghbalmungcore" */ = {
+		OBJ_2 /* Build configuration list for PBXProject "ghbalmungcore" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				922C2F3C274CB00D0013D86E /* Debug */,
-				922C2F3D274CB00D0013D86E /* Release */,
+				OBJ_3 /* Debug */,
+				OBJ_4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		922C2F3E274CB00D0013D86E /* Build configuration list for PBXNativeTarget "ghbalmungcore" */ = {
+		OBJ_21 /* Build configuration list for PBXNativeTarget "ghbalmungcore" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				922C2F3F274CB00D0013D86E /* Debug */,
-				922C2F40274CB00D0013D86E /* Release */,
+				OBJ_22 /* Debug */,
+				OBJ_23 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		922C2F41274CB00D0013D86E /* Build configuration list for PBXNativeTarget "ghbalmungcoreTests" */ = {
+		OBJ_28 /* Build configuration list for PBXNativeTarget "ghbalmungcorePackageDescription" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				922C2F42274CB00D0013D86E /* Debug */,
-				922C2F43274CB00D0013D86E /* Release */,
+				OBJ_29 /* Debug */,
+				OBJ_30 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		OBJ_34 /* Build configuration list for PBXAggregateTarget "ghbalmungcorePackageTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				OBJ_35 /* Debug */,
+				OBJ_36 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		OBJ_39 /* Build configuration list for PBXNativeTarget "ghbalmungcoreTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				OBJ_40 /* Debug */,
+				OBJ_41 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		922C2F8B274DC6D20013D86E /* XCRemoteSwiftPackageReference "ghgungnircore" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://gitlab.com/gipsyhub/mobile/ios/source/ghgungnircore.git";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+		922C2FC2274DDD0E0013D86E /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		922C2F8C274DC6D20013D86E /* ghgungnircore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 922C2F8B274DC6D20013D86E /* XCRemoteSwiftPackageReference "ghgungnircore" */;
+			productName = ghgungnircore;
+		};
+		922C2FC3274DDD0E0013D86E /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 922C2FC2274DDD0E0013D86E /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
-	rootObject = 922C2F21274CB00D0013D86E /* Project object */;
+	rootObject = OBJ_1 /* Project object */;
 }

@@ -1,0 +1,12 @@
+/* 
+  File.strings
+  GNNetworkServices
+
+  Created by Javier Bolaños on 22/07/20.
+  Copyright © 2020 Gipsyhub. All rights reserved.
+*/
+
+"defaultError" = "Error al convertir parametros a diccionario, favor de reintentar";
+"notReceiveData" = "no recibió datos de respuesta";
+"invalidUrl" = "Url inválida, verifique que la url proporcionada tenga el formato completo";
+"connectionNotDetected" = "No se detectó una conexión a internet válida";

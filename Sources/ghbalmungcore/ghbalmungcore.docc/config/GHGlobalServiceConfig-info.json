@@ -1,0 +1,32 @@
+{
+  "version": "1.0.0",
+  "identifier_server_list": [
+    {
+      "environment": "develop",
+      "urls": [],
+      "active": false
+    },
+    {
+      "environment": "qa",
+      "urls": [],
+      "active": false
+    },
+    {
+      "environment": "production",
+      "urls": [],
+      "active": true
+    },
+    {
+      "environment": "simulation",
+      "urls": [],
+      "active": false
+    },
+    {
+      "environment": "other",
+      "urls": [],
+      "active": false
+    }
+  ],
+  "time_out_interval": 45,
+  "bundle_identifier_json_mock": "ADD_SERVICE_BUNDLE"
+}
