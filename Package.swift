@@ -20,14 +20,18 @@ let package = Package(
                 .upToNextMajor(from: "5.4.0")
         ),
         .package(
-            url: "https://gitlab.com/l159/ios/dependencies/global/gnswissrazor.git",
+            url: "https://gitlab.com/gipsyhub/mobile/ios/source/ghgungnircore.git",
                 .branch("main")
         )
     ],
     targets: [
         .target(
             name: "ghbalmungcore",
-            dependencies: []),
+            dependencies: [
+                "Alamofire",
+                "ghgungnircore"
+            ]
+        ),
         .testTarget(
             name: "ghbalmungcoreTests",
             dependencies: ["ghbalmungcore"]),
