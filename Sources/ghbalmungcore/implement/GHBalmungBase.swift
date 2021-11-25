@@ -63,7 +63,7 @@ open class GHBalmungBase: GHConnectionBalmungDelegate {
         )
     }
     
-    public func requestFailWithError(identifier: Any, code: Int, data: NSDictionary, error: Error) {
+    open func requestFailWithError(identifier: Any, code: Int, data: NSDictionary, error: Error) {
         let errorRequestTimeOut = error as NSError
         
         if errorRequestTimeOut.code == -1005 {
