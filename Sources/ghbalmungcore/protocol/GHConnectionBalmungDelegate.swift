@@ -24,10 +24,17 @@ public protocol GHConnectionBalmungDelegate: AnyObject {
         error: Error
     )
     
+    func parseJson(
+        identifier: Any,
+        code: Int,
+        rawDic: NSDictionary,
+        responseHeaders: [AnyHashable : Any]
+    )
+    
     func removeReferenceContext()
 }
 
-extension GHConnectionBalmungDelegate {
+public extension GHConnectionBalmungDelegate {
     public func parseJson(
         identifier: Any,
         code: Int,
