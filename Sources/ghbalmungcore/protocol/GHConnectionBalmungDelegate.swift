@@ -33,12 +33,3 @@ public protocol GHConnectionBalmungDelegate: AnyObject {
     
     func removeReferenceContext()
 }
-
-public extension GHConnectionBalmungDelegate {
-    public func parseJson(
-        identifier: Any,
-        code: Int,
-        rawDic: NSDictionary,
-        responseHeaders: [AnyHashable : Any]
-    ) { }
-}

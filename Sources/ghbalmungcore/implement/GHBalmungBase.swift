@@ -80,6 +80,13 @@ open class GHBalmungBase: GHConnectionBalmungDelegate {
         }
     }
     
+    open func parseJson(
+        identifier: Any,
+        code: Int,
+        rawDic: NSDictionary,
+        responseHeaders: [AnyHashable : Any]
+    ) { }
+    
     public func removeReferenceContext() {
         self.coreServiceDelegate?.removeReferenceContext()
         self.coreServiceDelegate = nil
