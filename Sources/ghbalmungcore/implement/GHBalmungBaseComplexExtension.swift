@@ -21,7 +21,7 @@ extension GHBalmungBase {
                     let body = self.createBody(parameters: dic, boundary: boundary)
                     var meta = metadata
                     meta.setParams(params: body)
-                    self.coreServiceDelegate?.submitRequest(
+                    _ = self.coreServiceDelegate?.submitRequest(
                         bundle: self.bundle,
                         metadata: meta,
                         restMethod: .POST_FORM_DATA(boundary, body.count)
@@ -49,7 +49,7 @@ extension GHBalmungBase {
                     let body = self.createFileBody(parameters: dic, boundary: boundary)
                     var meta = metadata
                     meta.setParams(params: body)
-                    self.coreServiceDelegate?.submitRequest(
+                    _ = self.coreServiceDelegate?.submitRequest(
                         bundle: self.bundle,
                         metadata: meta,
                         restMethod: .POST_FILE_FORM_DATA(boundary, body.count)
@@ -84,7 +84,7 @@ extension GHBalmungBase {
                     var meta = metadata
                     meta.setParams(params: body)
                     
-                    self.coreServiceDelegate?.submitRequest(
+                    _ = self.coreServiceDelegate?.submitRequest(
                         bundle: self.bundle,
                         metadata: meta,
                         restMethod: .POST_URL_ENC
