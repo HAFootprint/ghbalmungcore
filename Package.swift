@@ -27,6 +27,9 @@ let package = Package(
     targets: [
         .target(
             name: "ghbalmungcore",
+            exclude:[
+                "resources/GHGlobalServiceConfig-info.json"
+            ],
             dependencies: [
                 "Alamofire",
                 "ghgungnircore"

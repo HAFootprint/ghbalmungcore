@@ -72,7 +72,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		922C2F8E274DC7090013D86E /* ghbalmungcore.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = ghbalmungcore.docc; sourceTree = "<group>"; };
+		3BA857C327679CB50004C371 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/GHNetworkServices.strings; sourceTree = "<group>"; };
+		3BA857C427679CB50004C371 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/GHNetworkServices.strings; sourceTree = "<group>"; };
+		3BA857C527679CB50004C371 /* es-419 */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "es-419"; path = "es-419.lproj/GHNetworkServices.strings"; sourceTree = "<group>"; };
+		3BA857C627679CB50004C371 /* GHGlobalServiceConfig-info.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "GHGlobalServiceConfig-info.json"; sourceTree = "<group>"; };
 		922C2F90274DC8670013D86E /* GHBalmungCoreLocalization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GHBalmungCoreLocalization.swift; sourceTree = "<group>"; };
 		922C2F92274DC9B70013D86E /* GHRestType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GHRestType.swift; sourceTree = "<group>"; };
 		922C2F95274DCB500013D86E /* GHCoreType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GHCoreType.swift; sourceTree = "<group>"; };
@@ -100,7 +103,6 @@
 		922C2FD1274DF1960013D86E /* GHRestTypeSettingExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GHRestTypeSettingExtension.swift; sourceTree = "<group>"; };
 		OBJ_11 /* GHDependencyConfigManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GHDependencyConfigManager.swift; sourceTree = "<group>"; };
 		OBJ_14 /* ghbalmungcoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ghbalmungcoreTests.swift; sourceTree = "<group>"; };
-		OBJ_18 /* GHGlobalServiceConfig-info.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "GHGlobalServiceConfig-info.json"; sourceTree = "<group>"; };
 		OBJ_19 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		OBJ_6 /* Package.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
 		OBJ_9 /* ghbalmungcore.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ghbalmungcore.h; sourceTree = "<group>"; };
@@ -129,6 +131,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3BA857C027679CA10004C371 /* resources */ = {
+			isa = PBXGroup;
+			children = (
+				3BA857C627679CB50004C371 /* GHGlobalServiceConfig-info.json */,
+				3BA857C127679CB50004C371 /* localization */,
+			);
+			path = resources;
+			sourceTree = "<group>";
+		};
+		3BA857C127679CB50004C371 /* localization */ = {
+			isa = PBXGroup;
+			children = (
+				3BA857C227679CB50004C371 /* GHNetworkServices.strings */,
+			);
+			path = localization;
+			sourceTree = "<group>";
+		};
 		922C2F8F274DC83B0013D86E /* enum */ = {
 			isa = PBXGroup;
 			children = (
@@ -299,17 +318,15 @@
 			name = Products;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		OBJ_5 /*  */ = {
+		OBJ_5 = {
 			isa = PBXGroup;
 			children = (
 				OBJ_6 /* Package.swift */,
 				OBJ_7 /* Sources */,
 				OBJ_12 /* Tests */,
 				OBJ_15 /* Products */,
-				OBJ_18 /* GHGlobalServiceConfig-info.json */,
 				OBJ_19 /* README.md */,
 			);
-			name = "";
 			sourceTree = "<group>";
 		};
 		OBJ_7 /* Sources */ = {
@@ -323,6 +340,7 @@
 		OBJ_8 /* ghbalmungcore */ = {
 			isa = PBXGroup;
 			children = (
+				3BA857C027679CA10004C371 /* resources */,
 				922C2FC7274DE9E40013D86E /* implement */,
 				922C2FBB274DDA710013D86E /* protocol */,
 				922C2FB2274DD9260013D86E /* core */,
@@ -333,7 +351,6 @@
 				922C2F9E274DD4940013D86E /* extension */,
 				922C2F8F274DC83B0013D86E /* enum */,
 				OBJ_10 /* manager */,
-				922C2F8E274DC7090013D86E /* ghbalmungcore.docc */,
 				OBJ_9 /* ghbalmungcore.h */,
 			);
 			name = ghbalmungcore;
@@ -409,8 +426,10 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				es,
+				"es-419",
 			);
-			mainGroup = OBJ_5 /*  */;
+			mainGroup = OBJ_5;
 			packageReferences = (
 				922C2F8B274DC6D20013D86E /* XCRemoteSwiftPackageReference "ghgungnircore" */,
 				922C2FC2274DDD0E0013D86E /* XCRemoteSwiftPackageReference "Alamofire" */,
@@ -491,6 +510,19 @@
 			targetProxy = 922C2F89274DC6790013D86E /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		3BA857C227679CB50004C371 /* GHNetworkServices.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3BA857C327679CB50004C371 /* en */,
+				3BA857C427679CB50004C371 /* es */,
+				3BA857C527679CB50004C371 /* es-419 */,
+			);
+			name = GHNetworkServices.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		OBJ_22 /* Debug */ = {
