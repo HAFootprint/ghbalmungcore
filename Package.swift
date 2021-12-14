@@ -20,7 +20,7 @@ let package = Package(
                 .upToNextMajor(from: "5.4.0")
         ),
         .package(
-            url: "https://gitlab.com/gipsyhub/mobile/ios/source/ghgungnircore.git",
+            url: "https://github.com/GypsyLecksfrawen/ghgungnircore.git",
                 .branch("main")
         )
     ],
