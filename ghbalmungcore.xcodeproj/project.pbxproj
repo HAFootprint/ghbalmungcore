@@ -48,9 +48,12 @@
 		922C2FCD274DED890013D86E /* GHBalmungBaseComplexExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922C2FCC274DED890013D86E /* GHBalmungBaseComplexExtension.swift */; };
 		922C2FCF274DEED80013D86E /* GHBalmungBaseRetryExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922C2FCE274DEED80013D86E /* GHBalmungBaseRetryExtension.swift */; };
 		922C2FD2274DF1960013D86E /* GHRestTypeSettingExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922C2FD1274DF1960013D86E /* GHRestTypeSettingExtension.swift */; };
+		9259C8BB276AA0D00000FA7C /* GHURLSessionRxCoreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9259C8BA276AA0D00000FA7C /* GHURLSessionRxCoreManager.swift */; };
+		9259C8BD276C0AEB0000FA7C /* GHBalmungBaseRxExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9259C8BC276C0AEB0000FA7C /* GHBalmungBaseRxExtension.swift */; };
+		9259C8BF276C0C600000FA7C /* GHFavoriteFlowServiceTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9259C8BE276C0C5B0000FA7C /* GHFavoriteFlowServiceTest.swift */; };
+		9259C8C1276C0C930000FA7C /* GHBaseCoreServiceTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9259C8C0276C0C930000FA7C /* GHBaseCoreServiceTest.swift */; };
 		OBJ_25 /* GHDependencyConfigManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_11 /* GHDependencyConfigManager.swift */; };
 		OBJ_32 /* Package.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_6 /* Package.swift */; };
-		OBJ_43 /* ghbalmungcoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_14 /* ghbalmungcoreTests.swift */; };
 		OBJ_45 /* ghbalmungcore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "ghbalmungcore::ghbalmungcore::Product" /* ghbalmungcore.framework */; };
 /* End PBXBuildFile section */
 
@@ -101,8 +104,11 @@
 		922C2FCC274DED890013D86E /* GHBalmungBaseComplexExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GHBalmungBaseComplexExtension.swift; sourceTree = "<group>"; };
 		922C2FCE274DEED80013D86E /* GHBalmungBaseRetryExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GHBalmungBaseRetryExtension.swift; sourceTree = "<group>"; };
 		922C2FD1274DF1960013D86E /* GHRestTypeSettingExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GHRestTypeSettingExtension.swift; sourceTree = "<group>"; };
+		9259C8BA276AA0D00000FA7C /* GHURLSessionRxCoreManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GHURLSessionRxCoreManager.swift; sourceTree = "<group>"; };
+		9259C8BC276C0AEB0000FA7C /* GHBalmungBaseRxExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GHBalmungBaseRxExtension.swift; sourceTree = "<group>"; };
+		9259C8BE276C0C5B0000FA7C /* GHFavoriteFlowServiceTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GHFavoriteFlowServiceTest.swift; sourceTree = "<group>"; };
+		9259C8C0276C0C930000FA7C /* GHBaseCoreServiceTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GHBaseCoreServiceTest.swift; sourceTree = "<group>"; };
 		OBJ_11 /* GHDependencyConfigManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GHDependencyConfigManager.swift; sourceTree = "<group>"; };
-		OBJ_14 /* ghbalmungcoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ghbalmungcoreTests.swift; sourceTree = "<group>"; };
 		OBJ_19 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		OBJ_6 /* Package.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
 		OBJ_9 /* ghbalmungcore.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ghbalmungcore.h; sourceTree = "<group>"; };
@@ -233,6 +239,7 @@
 				922C2FC5274DE34F0013D86E /* GHBaseCoreManager.swift */,
 				922C2FB8274DDA340013D86E /* alamo */,
 				922C2FB3274DD9350013D86E /* urlsession */,
+				9259C8B9276AA0840000FA7C /* urlsessioncombine */,
 			);
 			path = core;
 			sourceTree = "<group>";
@@ -268,6 +275,7 @@
 			isa = PBXGroup;
 			children = (
 				922C2FC8274DEA410013D86E /* GHBalmungBase.swift */,
+				9259C8BC276C0AEB0000FA7C /* GHBalmungBaseRxExtension.swift */,
 				922C2FCC274DED890013D86E /* GHBalmungBaseComplexExtension.swift */,
 				922C2FCE274DEED80013D86E /* GHBalmungBaseRetryExtension.swift */,
 				922C2FCA274DECAE0013D86E /* GHBalmungBaseOperationExtension.swift */,
@@ -282,6 +290,14 @@
 				922C2FD1274DF1960013D86E /* GHRestTypeSettingExtension.swift */,
 			);
 			path = GHRestType;
+			sourceTree = "<group>";
+		};
+		9259C8B9276AA0840000FA7C /* urlsessioncombine */ = {
+			isa = PBXGroup;
+			children = (
+				9259C8BA276AA0D00000FA7C /* GHURLSessionRxCoreManager.swift */,
+			);
+			path = urlsessioncombine;
 			sourceTree = "<group>";
 		};
 		OBJ_10 /* manager */ = {
@@ -303,7 +319,8 @@
 		OBJ_13 /* ghbalmungcoreTests */ = {
 			isa = PBXGroup;
 			children = (
-				OBJ_14 /* ghbalmungcoreTests.swift */,
+				9259C8C0276C0C930000FA7C /* GHBaseCoreServiceTest.swift */,
+				9259C8BE276C0C5B0000FA7C /* GHFavoriteFlowServiceTest.swift */,
 			);
 			name = ghbalmungcoreTests;
 			path = Tests/ghbalmungcoreTests;
@@ -419,6 +436,11 @@
 			attributes = {
 				LastSwiftMigration = 9999;
 				LastUpgradeCheck = 9999;
+				TargetAttributes = {
+					"ghbalmungcore::ghbalmungcorePackageTests::ProductTarget" = {
+						LastSwiftMigration = 1310;
+					};
+				};
 			};
 			buildConfigurationList = OBJ_2 /* Build configuration list for PBXProject "ghbalmungcore" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -463,6 +485,7 @@
 				922C2FC1274DDB560013D86E /* GHCoreBalmungDelegate.swift in Sources */,
 				922C2FAA274DD76E0013D86E /* GHGlobalConfigEntity.swift in Sources */,
 				922C2FC9274DEA410013D86E /* GHBalmungBase.swift in Sources */,
+				9259C8BD276C0AEB0000FA7C /* GHBalmungBaseRxExtension.swift in Sources */,
 				922C2FCF274DEED80013D86E /* GHBalmungBaseRetryExtension.swift in Sources */,
 				922C2FB5274DD9A90013D86E /* GHURLSessionCoreManager.swift in Sources */,
 				922C2FAD274DD7EE0013D86E /* GHStatusStorage.swift in Sources */,
@@ -472,6 +495,7 @@
 				922C2FD2274DF1960013D86E /* GHRestTypeSettingExtension.swift in Sources */,
 				922C2FA8274DD7110013D86E /* GHEnvironmentEntity.swift in Sources */,
 				922C2F91274DC8670013D86E /* GHBalmungCoreLocalization.swift in Sources */,
+				9259C8BB276AA0D00000FA7C /* GHURLSessionRxCoreManager.swift in Sources */,
 				922C2F98274DCBAA0013D86E /* GHCoreTypeInjectionExtension.swift in Sources */,
 				922C2FA5274DD5E60013D86E /* GHMetadataModel.swift in Sources */,
 				922C2FA0274DD4A70013D86E /* GHFoundationExtension.swift in Sources */,
@@ -492,7 +516,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 0;
 			files = (
-				OBJ_43 /* ghbalmungcoreTests.swift in Sources */,
+				9259C8C1276C0C930000FA7C /* GHBaseCoreServiceTest.swift in Sources */,
+				9259C8BF276C0C600000FA7C /* GHFavoriteFlowServiceTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -640,12 +665,27 @@
 		OBJ_35 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
 		OBJ_36 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};

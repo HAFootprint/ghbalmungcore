@@ -7,6 +7,7 @@
 
 import Foundation
 import ghgungnircore
+import Combine
 
 internal class GHBaseCoreManager: NSObject, GHCoreBalmungDelegate {
     internal var delegate: GHConnectionBalmungDelegate?
@@ -14,6 +15,11 @@ internal class GHBaseCoreManager: NSObject, GHCoreBalmungDelegate {
     
     override required init() {
         super.init()
+    }
+    
+    @available(iOS 13.0, *)
+    func submitRequest(bundle: Bundle, metadata: GHMetadataModel, restMethod: GHRestType) -> AnyPublisher<Any, URLSession.DataTaskPublisher.Failure>? {
+        return nil
     }
     
     internal func submitRequest(bundle: Bundle, metadata: GHMetadataModel, restMethod: GHRestType) -> Bool {
@@ -128,8 +134,8 @@ internal class GHBaseCoreManager: NSObject, GHCoreBalmungDelegate {
     
     internal func interceptResponse(
         response: URLResponse?,
-        metadata: GHMetadataModel) -> (statusCode: Int, responseHeaders: [AnyHashable : Any]
-    ) {
+        metadata: GHMetadataModel
+    ) -> (statusCode: Int, responseHeaders: [AnyHashable : Any]) {
         if let httpResponse = response as? HTTPURLResponse {
             print("GIPSY DANGER STATUS: \(httpResponse.statusCode)")
 

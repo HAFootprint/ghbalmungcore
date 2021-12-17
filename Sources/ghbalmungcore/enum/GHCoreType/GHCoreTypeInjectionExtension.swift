@@ -12,6 +12,8 @@ extension GHCoreType {
         switch self {
             case .URLSession:
                 nameClass = "GHURLSessionCoreManager"
+            case .URLRxSession:
+                nameClass = "GHURLSessionRxCoreManager"
             case .Alamo:
                 nameClass = "GHAlamoCoreManager"
         }

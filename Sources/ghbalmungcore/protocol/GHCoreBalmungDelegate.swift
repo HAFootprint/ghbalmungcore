@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import Combine
 
 public protocol GHCoreBalmungDelegate {
     var delegate: GHConnectionBalmungDelegate? { get set }
@@ -13,6 +14,8 @@ public protocol GHCoreBalmungDelegate {
     init()
     
     func submitRequest(bundle: Bundle, metadata: GHMetadataModel, restMethod: GHRestType) -> Bool
+    @available(iOS 13.0, *)
+    func submitRequest(bundle: Bundle, metadata: GHMetadataModel, restMethod: GHRestType) -> AnyPublisher<Any, URLSession.DataTaskPublisher.Failure>? 
     
     func cancelAllRequest()
     func removeReferenceContext()

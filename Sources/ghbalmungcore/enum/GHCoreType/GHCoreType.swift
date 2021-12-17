@@ -7,5 +7,6 @@
 
 public enum GHCoreType: Int {
     case URLSession
+    case URLRxSession
     case Alamo
 }
