@@ -7,7 +7,7 @@ let package = Package(
     name: "ghbalmungcore",
     defaultLocalization: "en",
     platforms: [
-        .iOS(.v10)
+        .iOS(.v11)
     ],
     products: [
         .library(
