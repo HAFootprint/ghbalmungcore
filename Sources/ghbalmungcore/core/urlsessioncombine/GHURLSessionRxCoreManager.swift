@@ -23,7 +23,7 @@ class GHURLSessionRxCoreManager: GHBaseCoreManager, URLSessionDelegate {
         bundle: Bundle,
         metadata: GHMetadataModel,
         restMethod: GHRestType
-    ) -> AnyPublisher<Any, URLSession.DataTaskPublisher.Failure>? {
+    ) -> AnyPublisher<Any, Error>? {
         
         if GHDependencyConfigManager.getStatusNetwork {
             if let nsurl = URL(string: metadata.url) {
@@ -47,10 +47,10 @@ class GHURLSessionRxCoreManager: GHBaseCoreManager, URLSessionDelegate {
                     delegateQueue: OperationQueue()
                 )
                 
-                return _dcConnection?[identifier]?.dataTaskPublisher(for: request)
-                    //.mapError { $0 as Error }
-                    //.setFailureType(to: Error.self)
-                    .map { $0.data }
+                return _dcConnection![identifier]!.dataTaskPublisher(for: request)
+                    .tryMap({ (data, response) -> (Data, URLResponse) in
+                        return (data, response)
+                    })
                     .eraseToAnyPublisher()
             }
         }

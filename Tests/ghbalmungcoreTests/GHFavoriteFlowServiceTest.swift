@@ -53,7 +53,7 @@ class GHFavoriteFlowServiceTest: GHBaseCoreServiceTest, GHBaseBalmungDelegate {
             type: -1
         )
         
-        self.subscriber = try _service?.doInRxVackground(
+        self.subscriber = _service?.doInRxVackground(
             metadata: metadataModel,
             method: .GET
         )?

@@ -18,7 +18,7 @@ internal class GHBaseCoreManager: NSObject, GHCoreBalmungDelegate {
     }
     
     @available(iOS 13.0, *)
-    func submitRequest(bundle: Bundle, metadata: GHMetadataModel, restMethod: GHRestType) -> AnyPublisher<Any, URLSession.DataTaskPublisher.Failure>? {
+    func submitRequest(bundle: Bundle, metadata: GHMetadataModel, restMethod: GHRestType) -> AnyPublisher<Any, Error>? {
         return nil
     }
     
