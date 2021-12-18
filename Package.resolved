@@ -1,0 +1,25 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "Alamofire",
+        "repositoryURL": "https://github.com/Alamofire/Alamofire.git",
+        "state": {
+          "branch": null,
+          "revision": "f82c23a8a7ef8dc1a49a8bfc6a96883e79121864",
+          "version": "5.5.0"
+        }
+      },
+      {
+        "package": "ghgungnircore",
+        "repositoryURL": "https://gitlab.com/gipsyhub/mobile/ios/source/ghgungnircore.git",
+        "state": {
+          "branch": "main",
+          "revision": "1af8a92ca588469649728f4e2783f69b85895b6c",
+          "version": null
+        }
+      }
+    ]
+  },
+  "version": 1
+}
