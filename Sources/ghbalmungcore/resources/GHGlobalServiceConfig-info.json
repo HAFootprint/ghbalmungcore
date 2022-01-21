@@ -8,13 +8,19 @@
     },
     {
       "environment": "qa",
-      "urls": [],
-      "active": false
+      "urls": [
+          "https://google.com/qa",
+          "https://facebook.com/qa"
+      ],
+      "active": true
     },
     {
       "environment": "production",
-      "urls": [],
-      "active": true
+      "urls": [
+          "https://google.com",
+          "https://facebook.com"
+      ],
+      "active": false
     },
     {
       "environment": "simulation",
