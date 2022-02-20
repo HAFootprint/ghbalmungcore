@@ -11,12 +11,6 @@ let package = Package(
     ],
     products: [
         .library(
-            name: "ghbalmungcore",
-            targets: [
-                "ghbalmungcore"
-            ]
-        ),
-        .library(
             name: "ghalamocore",
             targets: [
                 "ghbalmungcore",
