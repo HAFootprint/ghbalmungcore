@@ -12,7 +12,31 @@ let package = Package(
     products: [
         .library(
             name: "ghbalmungcore",
-            targets: ["ghbalmungcore"]),
+            targets: [
+                "ghbalmungcore"
+            ]
+        ),
+        .library(
+            name: "ghalamocore",
+            targets: [
+                "ghbalmungcore",
+                "ghalamocore"
+            ]
+        ),
+        .library(
+            name: "ghurlsessioncore",
+            targets: [
+                "ghbalmungcore",
+                "ghurlsessioncore"
+            ]
+        ),
+        .library(
+            name: "ghurlsessioncombine",
+            targets: [
+                "ghbalmungcore",
+                "ghurlsessioncombine"
+            ]
+        ),
     ],
     dependencies: [
         .package(
@@ -28,15 +52,39 @@ let package = Package(
         .target(
             name: "ghbalmungcore",
             dependencies: [
-                "Alamofire",
                 "ghgungnircore"
             ],
             exclude:[
                 "resources/GHGlobalServiceConfig-info.json"
             ]
         ),
+        .target(
+            name: "ghalamocore",
+            dependencies: [
+                "ghbalmungcore",
+                "Alamofire",
+                "ghgungnircore"
+            ]
+        ),
+        .target(
+            name: "ghurlsessioncore",
+            dependencies: [
+                "ghbalmungcore",
+                "ghgungnircore"
+            ]
+        ),
+        .target(
+            name: "ghurlsessioncombine",
+            dependencies: [
+                "ghbalmungcore",
+                "ghgungnircore"
+            ]
+        ),
         .testTarget(
             name: "ghbalmungcoreTests",
-            dependencies: ["ghbalmungcore"]),
+            dependencies: [
+                "ghbalmungcore"
+            ]
+        ),
     ]
 )

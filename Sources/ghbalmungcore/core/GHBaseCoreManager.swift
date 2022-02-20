@@ -9,20 +9,20 @@ import Foundation
 import ghgungnircore
 import Combine
 
-internal class GHBaseCoreManager: NSObject, GHCoreBalmungDelegate {
-    internal var delegate: GHConnectionBalmungDelegate?
-    internal var certificate: String?
+open class GHBaseCoreManager: NSObject, GHCoreBalmungDelegate {
+    public var delegate: GHConnectionBalmungDelegate?
+    public var certificate: String?
     
-    override required init() {
+    public override required init() {
         super.init()
     }
     
     @available(iOS 13.0, *)
-    func submitRequest(bundle: Bundle, metadata: GHMetadataModel, restMethod: GHRestType) -> AnyPublisher<Any, Error>? {
+    open func submitRequest(bundle: Bundle, metadata: GHMetadataModel, restMethod: GHRestType) -> AnyPublisher<Any, Error>? {
         return nil
     }
     
-    internal func submitRequest(bundle: Bundle, metadata: GHMetadataModel, restMethod: GHRestType) -> Bool {
+    open func submitRequest(bundle: Bundle, metadata: GHMetadataModel, restMethod: GHRestType) -> Bool {
         if GHDependencyConfigManager.getIdentifierRestServer(bundle: bundle) == .simulation {
             let dic = self.dictionaryWithContentsOfJSONString(
                 fileLocation: metadata.jsonLocalName,
@@ -44,7 +44,7 @@ internal class GHBaseCoreManager: NSObject, GHCoreBalmungDelegate {
         return true
     }
     
-    internal func convertToDictionary(data: Any?) -> [String: Any]? {
+    public func convertToDictionary(data: Any?) -> [String: Any]? {
         if let data = data as? Data {
             do {
                 return try JSONSerialization.jsonObject(
@@ -60,7 +60,7 @@ internal class GHBaseCoreManager: NSObject, GHCoreBalmungDelegate {
         return nil
     }
     
-    internal func getGenericObject<T>(restMethod: GHRestType, responseData: Data) -> T? {
+    public func getGenericObject<T>(restMethod: GHRestType, responseData: Data) -> T? {
         var gen: T?
         
         do {
@@ -86,7 +86,7 @@ internal class GHBaseCoreManager: NSObject, GHCoreBalmungDelegate {
         return gen
     }
     
-    internal func interceptRequest(
+    public func interceptRequest(
         bundle: Bundle,
         metadata: GHMetadataModel,
         restMethod: GHRestType,
@@ -132,7 +132,7 @@ internal class GHBaseCoreManager: NSObject, GHCoreBalmungDelegate {
         return request
     }
     
-    internal func interceptResponse(
+    public func interceptResponse(
         response: URLResponse?,
         metadata: GHMetadataModel
     ) -> (statusCode: Int, responseHeaders: [AnyHashable : Any]) {
@@ -174,11 +174,11 @@ internal class GHBaseCoreManager: NSObject, GHCoreBalmungDelegate {
         return (-1, [:])
     }
     
-    internal func cancelAllRequest() {
+    open func cancelAllRequest() {
         
     }
     
-    func removeReferenceContext() {
+    open func removeReferenceContext() {
         self.cancelAllRequest()
         
         self.certificate = nil

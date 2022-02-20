@@ -8,9 +8,10 @@
 import Foundation
 import Alamofire
 import ghgungnircore
+import ghbalmungcore
 
-internal class GHAlamoCoreManager: GHBaseCoreManager {
-    override func submitRequest(bundle: Bundle, metadata: GHMetadataModel, restMethod: GHRestType) -> Bool {
+public class GHAlamoCoreManager: GHBaseCoreManager {
+    public override func submitRequest(bundle: Bundle, metadata: GHMetadataModel, restMethod: GHRestType) -> Bool {
         var messageError:String = .empty
         
         guard super.submitRequest(bundle: bundle, metadata: metadata, restMethod: restMethod) else {
@@ -112,7 +113,7 @@ internal class GHAlamoCoreManager: GHBaseCoreManager {
         return true
     }
     
-    override func cancelAllRequest() {
+    public override func cancelAllRequest() {
         AF.session.getAllTasks { tasks in
             tasks.forEach { $0.cancel() }
         }

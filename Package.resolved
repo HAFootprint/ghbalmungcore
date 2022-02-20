@@ -12,7 +12,7 @@
       },
       {
         "package": "ghgungnircore",
-        "repositoryURL": "https://gitlab.com/gipsyhub/mobile/ios/source/ghgungnircore.git",
+        "repositoryURL": "https://git.gonet.us/gnglobaldependencies/ios/ghgungnircore.git",
         "state": {
           "branch": "main",
           "revision": "1af8a92ca588469649728f4e2783f69b85895b6c",

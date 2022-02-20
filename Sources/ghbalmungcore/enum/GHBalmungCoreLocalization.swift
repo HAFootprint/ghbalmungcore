@@ -7,13 +7,13 @@
 
 import Foundation
 
-enum GHBalmungCoreLocalization: String {
+public enum GHBalmungCoreLocalization: String {
     case defaultError
     case notReceiveData
     case invalidUrl
     case connectionNotDetected
     
-    func localize(bundle: Bundle) -> String {
+    public func localize(bundle: Bundle) -> String {
         self.localizedString(
             key: self,
             bundle: bundle

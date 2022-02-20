@@ -6,14 +6,14 @@
 //
 
 public struct GHMetadataModel {
-    let url: String
-    let jsonLocalName: String
-    let certificateAuthority: String?
+    public let url: String
+    public let jsonLocalName: String
+    public let certificateAuthority: String?
     
-    var params: Any?
-    var headers: [String: String]?
-    var saveSessionCookies: Bool
-    var saveServerDate: Bool
+    public var params: Any?
+    public var headers: [String: String]?
+    public var saveSessionCookies: Bool
+    public var saveServerDate: Bool
     
     public var type: Any = 0
     

@@ -7,6 +7,7 @@
 
 import Foundation
 import ghgungnircore
+import ghbalmungcore
 
 class GHURLSessionCoreManager: GHBaseCoreManager {
     private lazy var _dcConnection: [String: URLSession?]? = [:]

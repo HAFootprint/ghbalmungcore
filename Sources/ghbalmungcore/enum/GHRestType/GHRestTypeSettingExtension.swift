@@ -6,7 +6,7 @@
 //
 
 extension GHRestType {
-    internal var rawString: String {
+    public var rawString: String {
         switch self {
             case .GET, .GET_XML:
                 return "GET"
@@ -26,7 +26,7 @@ extension GHRestType {
         return met == "POST" || met == "PATCH" || met == "PUT" || met == "DELETE"
     }
     
-    internal var contentType: [String: String] {
+    public var contentType: [String: String] {
         switch self {
         case .POST_FORM_DATA(let boundary, let len), .POST_FILE_FORM_DATA(let boundary, let len):
             return [
