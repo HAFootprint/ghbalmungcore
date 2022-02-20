@@ -21,12 +21,14 @@ open class GHBalmungBase: GHConnectionBalmungDelegate {
     public var delegate: GHBaseBalmungDelegate?
     public var bundle: Bundle!
     
-    public init(bundle: Bundle, identifierService: GHCoreType) {
+    public init(bundle: Bundle, identifierService: GHCoreType) throws {
         let strClass = identifierService.getClass()
         
-        if let classCoreService = NSClassFromString(strClass) as? GHCoreBalmungDelegate.Type {
-            self.coreServiceDelegate = classCoreService.init()
+        guard let classCoreService = NSClassFromString(strClass) as? GHCoreBalmungDelegate.Type else {
+            throw GHErrorCore.coreNotFound
         }
+        
+        self.coreServiceDelegate = classCoreService.init()
         
         self.coreServiceDelegate?.delegate = self
         self.bundle = bundle

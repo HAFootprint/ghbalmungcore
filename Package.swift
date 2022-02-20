@@ -74,7 +74,10 @@ let package = Package(
         .testTarget(
             name: "ghbalmungcoreTests",
             dependencies: [
-                "ghbalmungcore"
+                "ghbalmungcore",
+                "ghalamocore",
+                "ghurlsessioncore",
+                "ghurlsessioncombine"
             ]
         ),
     ]
