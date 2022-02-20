@@ -11,11 +11,29 @@ extension GHCoreType {
         
         switch self {
             case .URLSession:
-                nameClass = "GHURLSessionCoreManager"
+                nameClass = String(
+                    format: "%@.%@",
+                    arguments: [
+                        "ghurlsessioncore",
+                        "GHURLSessionCoreManager"
+                    ]
+                )
             case .URLRxSession:
-                nameClass = "GHURLSessionRxCoreManager"
+                nameClass = String(
+                    format: "%@.%@",
+                    arguments: [
+                        "ghurlsessioncombine",
+                        "GHURLSessionRxCoreManager"
+                    ]
+                )
             case .Alamo:
-                nameClass = "GHAlamoCoreManager"
+                nameClass = String(
+                    format: "%@.%@",
+                    arguments: [
+                        "ghalamocore",
+                        "GHAlamoCoreManager"
+                    ]
+                )
         }
         
         return nameClass

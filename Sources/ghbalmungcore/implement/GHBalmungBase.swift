@@ -22,13 +22,7 @@ open class GHBalmungBase: GHConnectionBalmungDelegate {
     public var bundle: Bundle!
     
     public init(bundle: Bundle, identifierService: GHCoreType) {
-        let strClass = String(
-            format: "%@.%@",
-            arguments: [
-                "ghbalmungcore",
-                identifierService.getClass()
-            ]
-        )
+        let strClass = identifierService.getClass()
         
         if let classCoreService = NSClassFromString(strClass) as? GHCoreBalmungDelegate.Type {
             self.coreServiceDelegate = classCoreService.init()

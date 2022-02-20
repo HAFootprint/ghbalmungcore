@@ -56,22 +56,19 @@ let package = Package(
             name: "ghalamocore",
             dependencies: [
                 "ghbalmungcore",
-                "Alamofire",
-                "ghgungnircore"
+                "Alamofire"
             ]
         ),
         .target(
             name: "ghurlsessioncore",
             dependencies: [
-                "ghbalmungcore",
-                "ghgungnircore"
+                "ghbalmungcore"
             ]
         ),
         .target(
             name: "ghurlsessioncombine",
             dependencies: [
-                "ghbalmungcore",
-                "ghgungnircore"
+                "ghbalmungcore"
             ]
         ),
         .testTarget(
