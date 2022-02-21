@@ -38,7 +38,7 @@ let package = Package(
                 .upToNextMajor(from: "5.4.0")
         ),
         .package(
-            url: "https://git.gonet.us/gnglobaldependencies/ios/ghgungnircore.git",
+            url: "https://gitlab.com/styme1/mobile/ios/dependencies/ghgungnircore.git",
                 .branch("main")
         )
     ],

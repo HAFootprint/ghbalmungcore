@@ -12,10 +12,10 @@
       },
       {
         "package": "ghgungnircore",
-        "repositoryURL": "https://git.gonet.us/gnglobaldependencies/ios/ghgungnircore.git",
+        "repositoryURL": "https://gitlab.com/styme1/mobile/ios/dependencies/ghgungnircore.git",
         "state": {
           "branch": "main",
-          "revision": "1af8a92ca588469649728f4e2783f69b85895b6c",
+          "revision": "04e38ffbc692b1c5cd0e5084066d795796b25e1a",
           "version": null
         }
       }
