@@ -19,12 +19,12 @@ class GHFavoriteFlowServiceTest: GHBaseCoreServiceTest, GHBaseBalmungDelegate {
     
     private let urlStr = "https://gist.githubusercontent.com/aletomm90/7ff8e9a7c49aefd06a154fe097028d27/raw/c87e2e7d21313391d412420b4254c391aa68eeec/favorites.json"
     
-    override func setUp() {
+    override func setUp() throws {
         super.setUp()
         self.isFailed = false
         
         if let bun = _bundle {
-            _service = GHBalmungBase(
+            _service = try! GHBalmungBase(
                 bundle: bun,
                 identifierService: .URLRxSession
             )
@@ -42,9 +42,7 @@ class GHFavoriteFlowServiceTest: GHBaseCoreServiceTest, GHBaseBalmungDelegate {
         self.expectation = nil
     }
     
-    /**
-     * SUCCESS
-     */
+    //MARK: FLOW SUCCESS
     func testGetFavoriteListSuccess() throws {
         self.expectation = expectation(description: "::: Get favorite list success :::")
         
@@ -66,7 +64,7 @@ class GHFavoriteFlowServiceTest: GHBaseCoreServiceTest, GHBaseBalmungDelegate {
                         self.expectation?.fulfill()
                         XCTFail("\n::: Error: \(failure.localizedDescription)")
                     case .finished:
-                        dump("Hecho")
+                        dump("Finished Flow")
                 }
             },
             receiveValue: {
@@ -82,8 +80,6 @@ class GHFavoriteFlowServiceTest: GHBaseCoreServiceTest, GHBaseBalmungDelegate {
                         dump(error)
                     }
                 }
-                
-                dump(dic)
                 self.expectation?.fulfill()
                 XCTAssertTrue(dic.isNotEmpty)
             })

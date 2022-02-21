@@ -11,9 +11,7 @@ class GHBaseCoreServiceTest: XCTestCase {
     var expectation: XCTestExpectation?
     var isFailed = false
 
-    /********************
-     ** RESPONSE ERROR **
-     ********************/
+    //MARK: RESPONSE ERROR
     func requestFailWithError(identifier: Any, code: Int, data: NSDictionary, error: Error) {
         self.expectation?.fulfill()
 
