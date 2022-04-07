@@ -23,7 +23,9 @@ open class GHBaseCoreManager: NSObject, GHCoreBalmungDelegate {
     }
     
     open func submitRequest(bundle: Bundle, metadata: GHMetadataModel, restMethod: GHRestType) -> Bool {
-        if GHDependencyConfigManager.getIdentifierRestServer(bundle: bundle) == .simulation {
+        if GHDependencyConfigManager.getIdentifierRestServer(bundle: bundle) == .simulation ||
+            metadata.forceSimulationFlow {
+            
             let dic = self.dictionaryWithContentsOfJSONString(
                 fileLocation: metadata.jsonLocalName,
                 bundleIdentifier: GHDependencyConfigManager.getIdentifierBundleJsonMock(
