@@ -10,6 +10,7 @@ import Combine
 
 @testable import ghbalmungcore
 
+@available(iOS 13.0, *)
 class GHFavoriteFlowServiceTest: GHBaseCoreServiceTest, GHBaseBalmungDelegate {
     private var _service: GHBalmungBase?
     private var subscriber: AnyCancellable?
