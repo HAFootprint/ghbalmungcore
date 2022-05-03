@@ -15,13 +15,14 @@ class GHFavoriteFlowServiceTest: GHBaseCoreServiceTest, GHBaseBalmungDelegate {
     private var _service: GHBalmungBase?
     private var subscriber: AnyCancellable?
     private var _bundle: Bundle? {
-        return Bundle(identifier: "ghbalmungcore")
+        return .module //Bundle(identifier: "ghbalmungcore")
     }
     
     private let urlStr = "https://gist.githubusercontent.com/aletomm90/7ff8e9a7c49aefd06a154fe097028d27/raw/c87e2e7d21313391d412420b4254c391aa68eeec/favorites.json"
     
-    override func setUp() throws {
-        super.setUp()
+    override func setUp() async throws {
+        try await super.setUp()
+        
         self.isFailed = false
         
         if let bun = _bundle {
@@ -49,41 +50,26 @@ class GHFavoriteFlowServiceTest: GHBaseCoreServiceTest, GHBaseBalmungDelegate {
         
         let metadataModel = GHMetadataModel(
             url: self.urlStr,
-            type: -1
+            type: 1009
         )
         
-        self.subscriber = _service?.doInRxVackground(
+        self.subscriber = _service?.doInRxBackground(
             metadata: metadataModel,
             method: .GET
         )?
         .receive(on: DispatchQueue.main)
-        .sink(
-            receiveCompletion: { completion in
-                switch completion {
-                    case .failure(let failure):
-                        dump("Error \(failure)")
-                        self.expectation?.fulfill()
-                        XCTFail("\n::: Error: \(failure.localizedDescription)")
-                    case .finished:
-                        dump("Finished Flow")
-                }
-            },
+        .sink(receiveCompletion: self.requestFail,
             receiveValue: {
-                var dic: [NSDictionary] = []
-                
-                if let data = $0 as? Data {
-                    do {
-                        if let generic = try JSONSerialization.jsonObject(with: data, options: []) as? [NSDictionary] {
-                            dic = generic
-                        }
-                    }
-                    catch {
-                        dump(error)
-                    }
-                }
                 self.expectation?.fulfill()
-                XCTAssertTrue(dic.isNotEmpty)
-            })
+                
+                if let response = $0 as? GHResponseModel {
+                    XCTAssertTrue(response.data.count > 0)
+                }
+                else {
+                    XCTFail("\n::: Error: Response Model Not Valid")
+                }
+            }
+        )
         
         self.waitForExpectations(timeout: 60.0, handler: nil)
     }

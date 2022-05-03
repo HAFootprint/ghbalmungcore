@@ -80,7 +80,7 @@ class GHURLSessionCoreManager: GHBaseCoreManager {
                             dic = dc
                         }
                         else {
-                            dic = ["gh_generic_key": typeRes]
+                            dic = [GHBalmungContants.genericKeyServiceResponse: typeRes]
                         }
                         
                         self.delegate?.receiveData(

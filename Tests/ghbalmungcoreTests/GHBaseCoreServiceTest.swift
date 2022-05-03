@@ -6,6 +6,7 @@
 //
 
 import XCTest
+import Combine
 
 class GHBaseCoreServiceTest: XCTestCase {
     var expectation: XCTestExpectation?
@@ -20,6 +21,22 @@ class GHBaseCoreServiceTest: XCTestCase {
         }
         else {
             XCTFail("\n::: Error: \(error.localizedDescription)")
+        }
+    }
+    
+    @available(iOS 13.0, *)
+    func requestFail(completion: Subscribers.Completion<Error>) {
+        switch completion {
+            case .failure(let error):
+                self.expectation?.fulfill()
+                if self.isFailed {
+                    XCTAssert(!error.localizedDescription.isEmpty)
+                }
+                else {
+                    XCTFail("\n::: Error: \(error.localizedDescription)")
+                }
+            case .finished:
+                break
         }
     }
 }

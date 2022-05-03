@@ -18,7 +18,6 @@ enum NetworkErrors: Error {
 @available(iOS 13.0, *)
 class GHURLSessionRxCoreManager: GHBaseCoreManager, URLSessionDelegate {
     private lazy var _dcConnection: [String: URLSession]? = [:]
-    private var subscriber: AnyCancellable?
     
     override func submitRequest(
         bundle: Bundle,
@@ -48,9 +47,32 @@ class GHURLSessionRxCoreManager: GHBaseCoreManager, URLSessionDelegate {
                     delegateQueue: OperationQueue()
                 )
                 
-                return _dcConnection![identifier]!.dataTaskPublisher(for: request)
-                    .tryMap({ (data, response) -> (Data, URLResponse) in
-                        return (data, response)
+                return _dcConnection?[identifier]?.dataTaskPublisher(for: request)
+                    .tryMap({ (data, response) -> (GHResponseModel) in
+                        let tuple = self.interceptResponse(
+                            response: response,
+                            metadata: metadata
+                        )
+                        
+                        if let typeRes: Any = self.getGenericObject(restMethod: restMethod, responseData: data) {
+                            var dic: NSDictionary = [:]
+                                
+                            if let dc = typeRes as? NSDictionary {
+                                dic = dc
+                            }
+                            else {
+                                dic = [GHBalmungContants.genericKeyServiceResponse: typeRes]
+                            }
+                            
+                            return GHResponseModel(
+                                identifier: metadata.type,
+                                statusCode: tuple.statusCode,
+                                data: dic,
+                                responseHeaders: tuple.responseHeaders
+                            )
+                        }
+                        
+                        return GHResponseModel()
                     })
                     .eraseToAnyPublisher()
             }
@@ -64,5 +86,18 @@ class GHURLSessionRxCoreManager: GHBaseCoreManager, URLSessionDelegate {
                 ]
             )
         ).eraseToAnyPublisher()
+    }
+    
+    override func cancelAllRequest() {
+        _dcConnection?.forEach { $0.value.invalidateAndCancel() }
+        
+        super.cancelAllRequest()
+    }
+    
+    public override func removeReferenceContext() {
+        _dcConnection?.removeAll()
+        _dcConnection = nil
+        
+        super.removeReferenceContext()
     }
 }

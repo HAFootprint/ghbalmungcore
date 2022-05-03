@@ -82,7 +82,7 @@ open class GHBaseCoreManager: NSObject, GHCoreBalmungDelegate {
             }
         }
         catch {
-            gen = ["gh_generic_key": responseData] as? T
+            gen = [GHBalmungContants.genericKeyServiceResponse: responseData] as? T
         }
         
         return gen
