@@ -48,7 +48,7 @@ class GHURLSessionRxCoreManager: GHBaseCoreManager, URLSessionDelegate {
                 )
                 
                 return _dcConnection?[identifier]?.dataTaskPublisher(for: request)
-                    .tryMap({ (data, response) -> (GHResponseModel) in
+                    .tryMap { (data, response) -> (GHResponseModel) in
                         let tuple = self.interceptResponse(
                             response: response,
                             metadata: metadata
@@ -73,8 +73,7 @@ class GHURLSessionRxCoreManager: GHBaseCoreManager, URLSessionDelegate {
                         }
                         
                         return GHResponseModel()
-                    })
-                    .eraseToAnyPublisher()
+                    }.eraseToAnyPublisher()
             }
         }
         

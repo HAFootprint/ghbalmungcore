@@ -38,17 +38,15 @@ let package = Package(
                 .upToNextMajor(from: "5.4.0")
         ),
         //TODO: Global
-        .package(
-            url: "https://gitlab.com/styme1/mobile/ios/dependencies/ghgungnircore.git",
-                .branch("main")
-        )
+//        .package(
+//            url: "https://gitlab.com/styme1/mobile/ios/dependencies/ghgungnircore.git",
+//            branch: "main"
+//        )
         //TODO: Private
-        /*.
-        package(
-           url: "https://git.gonet.us/gnglobaldependencies/ios/ghgungnircore.git",
-               .branch("main")
+        .package(
+           url: "https:git.gonet.us/gnglobaldependencies/ios/ghgungnircore.git",
+           branch: "main"
         )
-        */
     ],
     targets: [
         .target(
