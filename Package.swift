@@ -44,7 +44,7 @@ let package = Package(
 //        )
         //TODO: Private
         .package(
-           url: "https:git.gonet.us/gnglobaldependencies/ios/ghgungnircore.git",
+           url: "https://git.gonet.us/gnglobaldependencies/ios/ghgungnircore.git",
            branch: "main"
         )
     ],
