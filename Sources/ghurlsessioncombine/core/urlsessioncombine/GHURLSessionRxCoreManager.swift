@@ -24,6 +24,10 @@ class GHURLSessionRxCoreManager: GHBaseCoreManager, URLSessionDelegate {
         metadata: GHMetadataModel,
         restMethod: GHRestType
     ) -> AnyPublisher<Any, Error>? {
+        if let submit = super.submitRequest(bundle: bundle, metadata: metadata, restMethod: restMethod) {
+            return submit
+        }
+        
         if GHDependencyConfigManager.getStatusNetwork {
             if let nsurl = URL(string: metadata.url) {
                 let request = self.interceptRequest(
