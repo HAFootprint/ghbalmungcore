@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import ghgungnircore
 
 public enum GHBalmungCoreLocalization: String {
     case defaultError
@@ -17,6 +18,12 @@ public enum GHBalmungCoreLocalization: String {
         self.localizedString(
             key: self,
             bundle: bundle
+        )
+    }
+    
+    public func errorLocalize(bundle: Bundle) -> Error {
+        return GHError.make(
+            message: self.localize
         )
     }
 

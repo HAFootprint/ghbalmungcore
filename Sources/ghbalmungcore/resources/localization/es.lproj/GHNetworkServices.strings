@@ -7,6 +7,6 @@
 */
 
 "defaultError" = "Error al convertir parametros a diccionario, favor de reintentar";
-"notReceiveData" = "no recibió datos de respuesta";
-"invalidUrl" = "Url inválida, verifique que la url proporcionada tenga el formato completo";
+"notReceiveData" = "No recibió datos de respuesta";
+"invalidUrl" = "Url inválida, verifique el formato completo de la url";
 "connectionNotDetected" = "No se detectó una conexión a internet válida";

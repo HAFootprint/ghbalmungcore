@@ -7,6 +7,6 @@
 */
 
 "defaultError" = "Error converting parameters to dictionary, please try again";
-"notReceiveData" = "did not receive response data";
+"notReceiveData" = "Did not receive response data";
 "invalidUrl" = "Invalid url, check that the url provided has the full format";
 "connectionNotDetected" = "A valid internet connection was not detected";

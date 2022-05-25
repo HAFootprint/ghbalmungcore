@@ -7,16 +7,15 @@
 
 import Foundation
 import ghgungnircore
+import Combine
 
 open class GHBalmungBase: GHConnectionBalmungDelegate {
     internal var metadata: GHMetadataModel!
     internal var restMethod: GHRestType!
     internal var retryCounter: Int = 0
-    internal var coreServiceDelegate: GHCoreBalmungDelegate?
     
-    internal lazy var defaultError = GHError.make(
-        message: GHBalmungCoreLocalization.defaultError.localize
-    )
+    internal var coreServiceDelegate: GHCoreBalmungDelegate?
+    internal lazy var defaultError = GHBalmungCoreLocalization.defaultError.errorLocalize
     
     public var delegate: GHBaseBalmungDelegate?
     public var bundle: Bundle!
@@ -43,6 +42,15 @@ open class GHBalmungBase: GHConnectionBalmungDelegate {
         self.retryCounter   = 0
         
         _ = self.coreServiceDelegate?.submitRequest(
+            bundle: self.bundle,
+            metadata: metadata,
+            restMethod: method
+        )
+    }
+    
+    @available(iOS 13.0, *)
+    public func doInRxBackground(metadata: GHMetadataModel, method: GHRestType) -> AnyPublisher<Any, Error>? {
+        return self.coreServiceDelegate?.submitRequest(
             bundle: self.bundle,
             metadata: metadata,
             restMethod: method

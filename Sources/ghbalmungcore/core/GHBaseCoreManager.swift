@@ -36,7 +36,7 @@ open class GHBaseCoreManager: NSObject, GHCoreBalmungDelegate {
                 responseHeaders: [:]
             )
             
-            return Just(model)
+            return Result.Publisher(.success(model))
                 .setFailureType(to: Error.self)
                 .eraseToAnyPublisher()
         }

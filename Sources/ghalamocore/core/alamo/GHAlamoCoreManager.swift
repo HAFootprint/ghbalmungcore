@@ -36,11 +36,9 @@ public class GHAlamoCoreManager: GHBaseCoreManager {
                         data: metadata.params
                     ),
                     headers: HTTPHeaders(headers)
-                ) { $0.timeoutInterval = GHDependencyConfigManager.timeOutInterval(
-                    bundle: bundle
-                ) }
+                )
+                { $0.timeoutInterval = GHDependencyConfigManager.timeOutInterval(bundle: bundle) }
                 .response { response in
-                    
                     let statusCode      = response.response?.statusCode ?? -1
                     let responseHeaders = response.response?.allHeaderFields ?? [:]
                     
