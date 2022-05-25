@@ -19,6 +19,29 @@ open class GHBaseCoreManager: NSObject, GHCoreBalmungDelegate {
     
     @available(iOS 13.0, *)
     open func submitRequest(bundle: Bundle, metadata: GHMetadataModel, restMethod: GHRestType) -> AnyPublisher<Any, Error>? {
+        if GHDependencyConfigManager.getIdentifierRestServer(bundle: bundle) == .simulation ||
+            metadata.forceSimulationFlow {
+            
+            let dic = self.dictionaryWithContentsOfJSONString(
+                fileLocation: metadata.jsonLocalName,
+                bundleIdentifier: GHDependencyConfigManager.getIdentifierBundleJsonMock(
+                    bundle: bundle
+                )
+            )
+            
+            let model = GHResponseModel(
+                identifier: metadata.type,
+                statusCode: 200,
+                data: dic,
+                responseHeaders: [:]
+            )
+            
+            return Just(model)
+                .setFailureType(to: Error.self)
+                .eraseToAnyPublisher()
+        }
+        
+        
         return nil
     }
     
@@ -95,17 +118,71 @@ open class GHBaseCoreManager: NSObject, GHCoreBalmungDelegate {
         url: URL
     ) -> URLRequest {
         var request = URLRequest(url: url)
-        
-        if restMethod.hasBody {
-            request.httpBody = metadata.params as? Data
-        }
+        var headers: [String: String] = restMethod.contentType()
         
         request.httpMethod          = restMethod.rawString
         request.timeoutInterval     = GHDependencyConfigManager.timeOutInterval(
             bundle: bundle
         )
         
-        var headers = restMethod.contentType
+        if restMethod.hasBody {
+            if restMethod == .POST_FORM_DATA {
+                if let data = metadata.params as? Data {
+                    do {
+                        if let dic = try JSONSerialization.jsonObject(with: data, options: []) as? [String : Any?] {
+                            let boundary = "Boundary-\(UUID().uuidString)"
+                            let body = GHBalmungTools.createBody(parameters: dic, boundary: boundary)
+                            request.httpBody = body
+                            
+                            headers = restMethod.contentType(boundary: boundary, length: body.count)
+                        }
+                    }
+                    catch {
+                        print(error.localizedDescription)
+                    }
+                }
+            }
+            else if restMethod == .POST_FILE_FORM_DATA {
+                if let data = metadata.params as? Data {
+                    do {
+                        if let dic = try JSONSerialization.jsonObject(with: data, options: []) as? [String : Any?] {
+                            let boundary = "Boundary-\(UUID().uuidString)"
+                            let body = GHBalmungTools.createFileBody(parameters: dic, boundary: boundary)
+                            request.httpBody = body
+                            
+                            headers = restMethod.contentType(boundary: boundary, length: body.count)
+                        }
+                    }
+                    catch {
+                        print(error.localizedDescription)
+                    }
+                }
+            }
+            else if restMethod == .POST_URL_ENC {
+                if let data = metadata.params as? Data {
+                    do {
+                        if let dic = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any?] {
+                            let parameterArray = dic.map { (key, value) -> String in
+                                guard let value = value else { return .empty }
+                                
+                                return "\(key)=\(value)"
+                                //TODO: Revisar encoding
+                                //"\(key)=\(self.percentEscapeString(any: value))"
+                            }.filter { $0.isNotEmpty }
+                            
+                            request.httpBody = parameterArray.joined(separator: "&").data(using: .utf8)
+                        }
+                    }
+                    catch {
+                        print(error.localizedDescription)
+                    }
+                }
+            }
+            else {
+                request.httpBody = metadata.params as? Data
+            }
+        }
+        
         if let dic = metadata.headers, headers.isNotEmpty {
             dic.forEach { headers[$0.key] = $0.value }
         }
@@ -152,7 +229,7 @@ open class GHBaseCoreManager: NSObject, GHCoreBalmungDelegate {
                             domain: cookie.domain
                         )
                         
-                        dump("GIPSY DANGER COOKIE: \(cookieModel)")
+                        print("GIPSY DANGER COOKIE: \(cookieModel)")
                         cookies.append(cookieModel)
                     }
 

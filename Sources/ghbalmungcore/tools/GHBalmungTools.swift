@@ -1,16 +1,15 @@
 //
-//  GHBalmungBaseOperationExtension.swift
-//  ghbalmungcore
+//  File.swift
+//  
 //
-//  Created by Javier Carapia on 23/11/21.
+//  Created by Javier Carapia on 25/05/22.
 //
 
 import Foundation
-import ghgungnircore
 
-extension GHBalmungBase {
-    //TEXT
-    func createBody(parameters: [String : Any?], boundary: String) -> Data {
+internal struct GHBalmungTools {
+    //MARK: NORMAL
+    internal static func createBody(parameters: [String : Any?], boundary: String) -> Data {
         let body = NSMutableData()
         parameters.forEach {
             body.appendString(
@@ -27,7 +26,7 @@ extension GHBalmungBase {
         return body as Data
     }
     
-    private func convertFormField(named name: String, value: Any?, using boundary: String) -> String {
+    private static func convertFormField(named name: String, value: Any?, using boundary: String) -> String {
         var fieldString = "--\(boundary)\r\n"
         fieldString.append("Content-Disposition: form-data; name=\"\(name)\"\r\n")
         fieldString.append("\r\n")
@@ -37,8 +36,8 @@ extension GHBalmungBase {
         return fieldString
     }
     
-    //FILE
-    func createFileBody(parameters: [String : Any?], boundary: String) -> Data {
+    //MARK: FILE
+    internal static func createFileBody(parameters: [String : Any?], boundary: String) -> Data {
         let body = NSMutableData()
         parameters.forEach {
             body.append(
@@ -55,7 +54,7 @@ extension GHBalmungBase {
         return body as Data
     }
     
-    private func convertFileFormField(named name: String, value: Any?, using boundary: String) -> Data {
+    private static func convertFileFormField(named name: String, value: Any?, using boundary: String) -> Data {
         let body = NSMutableData()
         
         body.appendString("--\(boundary)\r\n")
@@ -79,7 +78,8 @@ extension GHBalmungBase {
         return body as Data
     }
     
-    func percentEscapeString(any: Any?) -> String {
+    //TODO: No se esta consumiendo esta funcionalidad, revisar si es necesaria o moverla a una clase de utilidad
+    internal static func percentEscapeString(any: Any?) -> String {
         guard let any = any else {
             return .empty
         }

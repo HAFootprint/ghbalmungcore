@@ -24,7 +24,6 @@ class GHURLSessionRxCoreManager: GHBaseCoreManager, URLSessionDelegate {
         metadata: GHMetadataModel,
         restMethod: GHRestType
     ) -> AnyPublisher<Any, Error>? {
-        
         if GHDependencyConfigManager.getStatusNetwork {
             if let nsurl = URL(string: metadata.url) {
                 let request = self.interceptRequest(
@@ -81,7 +80,9 @@ class GHURLSessionRxCoreManager: GHBaseCoreManager, URLSessionDelegate {
             error: URLSession.DataTaskPublisher.Failure(
                 .cannotConnectToHost,
                 userInfo: [
-                    NSLocalizedDescriptionKey : GHBalmungCoreLocalization.connectionNotDetected.localize(bundle: bundle)
+                    NSLocalizedDescriptionKey: GHBalmungCoreLocalization.connectionNotDetected.localize(
+                        bundle: bundle
+                    )
                 ]
             )
         ).eraseToAnyPublisher()

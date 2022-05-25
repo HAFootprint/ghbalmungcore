@@ -12,8 +12,8 @@ public enum GHRestType: Equatable {
     case GET_XML
     case POST
     case POST_URL_ENC
-    case POST_FORM_DATA(String, Int)
-    case POST_FILE_FORM_DATA(String, Int)
+    case POST_FORM_DATA
+    case POST_FILE_FORM_DATA
     case PUT
     case DELETE
     case PATCH

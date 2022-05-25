@@ -32,6 +32,7 @@ public enum GHBalmungCoreLocalization: String {
     }
 
     private func bundleForResource(bundle: Bundle) -> Bundle {
+        //TODO: Revisar el crear un Bundle por tipo de implementación
         guard let path = bundle.path(forResource: "ghbalmungcoreresources", ofType: "bundle") else {
             return bundle
         }

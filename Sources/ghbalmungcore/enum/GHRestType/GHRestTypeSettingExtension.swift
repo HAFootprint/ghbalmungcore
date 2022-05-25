@@ -26,17 +26,17 @@ extension GHRestType {
         return met == "POST" || met == "PATCH" || met == "PUT" || met == "DELETE"
     }
     
-    public var contentType: [String: String] {
+    public func contentType(boundary: String = "", length: Int = -1) -> [String: String] {
         switch self {
-        case .POST_FORM_DATA(let boundary, let len), .POST_FILE_FORM_DATA(let boundary, let len):
-            return [
-                "Content-Type": "multipart/form-data; boundary=\(boundary)",
-                "Content-Length": "\(len)"
-            ]
-        case .POST_URL_ENC:
-            return ["Content-Type": "application/x-www-form-urlencoded"]
-        default:
-            return ["Content-Type": "application/json"]
+            case .POST_FORM_DATA, .POST_FILE_FORM_DATA:
+                return [
+                    "Content-Type": "multipart/form-data; boundary=\(boundary)",
+                    "Content-Length": "\(length)"
+                ]
+            case .POST_URL_ENC:
+                return ["Content-Type": "application/x-www-form-urlencoded"]
+            default:
+                return ["Content-Type": "application/json"]
         }
     }
 }

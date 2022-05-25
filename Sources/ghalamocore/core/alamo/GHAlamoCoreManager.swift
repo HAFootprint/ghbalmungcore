@@ -22,7 +22,9 @@ public class GHAlamoCoreManager: GHBaseCoreManager {
             self.certificate = metadata.certificateAuthority
             
             if URL(string: metadata.url) != nil {
-                var headers = restMethod.contentType
+                //TODO: Revisar el consumo de flujos POST_URL_ENC, POST_FORM_DATA y POST_FILE_FORM_DATA
+                var headers = restMethod.contentType()
+                
                 if let dic = metadata.headers, headers.isNotEmpty {
                     dic.forEach { headers[$0.key] = $0.value }
                 }
