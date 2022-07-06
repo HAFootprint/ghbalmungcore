@@ -43,9 +43,14 @@ let package = Package(
 //            branch: "main"
 //        )
         //TODO: Private
+//        .package(
+//           url: "https://git.gonet.us/gnglobaldependencies/ios/ghgungnircore.git",
+//           branch: "main"
+//        )
+        //TODO: Github
         .package(
-           url: "https://git.gonet.us/gnglobaldependencies/ios/ghgungnircore.git",
-           branch: "main"
+            url: "https://github.com/StyMe-IOS/ghgungnircore.git",
+            branch: "main"
         )
     ],
     targets: [
