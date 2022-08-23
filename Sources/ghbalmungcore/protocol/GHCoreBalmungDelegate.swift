@@ -13,9 +13,20 @@ public protocol GHCoreBalmungDelegate {
     
     init()
     
-    func submitRequest(bundle: Bundle, metadata: GHMetadataModel, restMethod: GHRestType) -> Bool
+    func submitRequest(
+        bundle: Bundle,
+        metadata: GHMetadataModel,
+        restMethod: GHRestType,
+        restContentType: GHRestContentType
+    ) -> Bool
+    
     @available(iOS 13.0, *)
-    func submitRequest(bundle: Bundle, metadata: GHMetadataModel, restMethod: GHRestType) -> AnyPublisher<Any, Error>? 
+    func submitRequest(
+        bundle: Bundle,
+        metadata: GHMetadataModel,
+        restMethod: GHRestType,
+        restContentType: GHRestContentType
+    ) -> AnyPublisher<Any, Error>?
     
     func cancelAllRequest()
     func removeReferenceContext()

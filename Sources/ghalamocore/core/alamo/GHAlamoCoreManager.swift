@@ -11,10 +11,10 @@ import ghgungnircore
 import ghbalmungcore
 
 public class GHAlamoCoreManager: GHBaseCoreManager {
-    public override func submitRequest(bundle: Bundle, metadata: GHMetadataModel, restMethod: GHRestType) -> Bool {
+    public override func submitRequest(bundle: Bundle, metadata: GHMetadataModel, restMethod: GHRestType, restContentType: GHRestContentType) -> Bool {
         var messageError:String = .empty
         
-        guard super.submitRequest(bundle: bundle, metadata: metadata, restMethod: restMethod) else {
+        guard super.submitRequest(bundle: bundle, metadata: metadata, restMethod: restMethod, restContentType: restContentType) else {
             return true
         }
         
@@ -23,7 +23,7 @@ public class GHAlamoCoreManager: GHBaseCoreManager {
             
             if URL(string: metadata.url) != nil {
                 //TODO: Revisar el consumo de flujos POST_URL_ENC, POST_FORM_DATA y POST_FILE_FORM_DATA
-                var headers = restMethod.contentType()
+                var headers = restMethod.contentType(contentType: restContentType)
                 
                 if let dic = metadata.headers, headers.isNotEmpty {
                     dic.forEach { headers[$0.key] = $0.value }

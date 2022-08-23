@@ -12,6 +12,7 @@ import Combine
 open class GHBalmungBase: GHConnectionBalmungDelegate {
     internal var metadata: GHMetadataModel!
     internal var restMethod: GHRestType!
+    internal var restContentType: GHRestContentType!
     internal var retryCounter: Int = 0
     
     internal var coreServiceDelegate: GHCoreBalmungDelegate?
@@ -40,24 +41,35 @@ open class GHBalmungBase: GHConnectionBalmungDelegate {
     //*************************
     //MARK: PUBLIC FUNCTIONS
     //*************************
-    public func doInBackground(metadata: GHMetadataModel, method: GHRestType) {
-        self.restMethod     = method
-        self.metadata       = metadata
-        self.retryCounter   = 0
+    public func doInBackground(
+        metadata: GHMetadataModel,
+        method: GHRestType,
+        restContentType: GHRestContentType = .json
+    ) {
+        self.restMethod      = method
+        self.metadata        = metadata
+        self.restContentType = restContentType
+        self.retryCounter    = 0
         
         _ = self.coreServiceDelegate?.submitRequest(
             bundle: self.bundle,
             metadata: metadata,
-            restMethod: method
+            restMethod: method,
+            restContentType: restContentType
         )
     }
     
     @available(iOS 13.0, *)
-    public func doInRxBackground(metadata: GHMetadataModel, method: GHRestType) -> AnyPublisher<Any, Error>? {
+    public func doInRxBackground(
+        metadata: GHMetadataModel,
+        method: GHRestType,
+        restContentType: GHRestContentType = .json
+    ) -> AnyPublisher<Any, Error>? {
         return self.coreServiceDelegate?.submitRequest(
             bundle: self.bundle,
             metadata: metadata,
-            restMethod: method
+            restMethod: method,
+            restContentType: restContentType
         )
     }
     
@@ -96,5 +108,6 @@ open class GHBalmungBase: GHConnectionBalmungDelegate {
         
         self.metadata = nil
         self.restMethod = nil
+        self.restContentType = nil
     }
 }

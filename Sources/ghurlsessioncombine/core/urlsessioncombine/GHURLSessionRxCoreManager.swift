@@ -22,9 +22,10 @@ class GHURLSessionRxCoreManager: GHBaseCoreManager, URLSessionDelegate {
     override func submitRequest(
         bundle: Bundle,
         metadata: GHMetadataModel,
-        restMethod: GHRestType
+        restMethod: GHRestType,
+        restContentType: GHRestContentType
     ) -> AnyPublisher<Any, Error>? {
-        if let submit = super.submitRequest(bundle: bundle, metadata: metadata, restMethod: restMethod) {
+        if let submit = super.submitRequest(bundle: bundle, metadata: metadata, restMethod: restMethod, restContentType: restContentType) {
             return submit
         }
         
@@ -34,6 +35,7 @@ class GHURLSessionRxCoreManager: GHBaseCoreManager, URLSessionDelegate {
                     bundle: bundle,
                     metadata: metadata,
                     restMethod: restMethod,
+                    contentType: restContentType,
                     url: nsurl
                 )
                 

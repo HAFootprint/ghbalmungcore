@@ -6,6 +6,12 @@
 //
 
 extension GHRestType {
+//    public var contentType: GHRestContentType {
+//        switch {
+//            case
+//        }
+//    }
+    
     public var rawString: String {
         switch self {
             case .GET, .GET_XML:
@@ -26,17 +32,32 @@ extension GHRestType {
         return met == "POST" || met == "PATCH" || met == "PUT" || met == "DELETE"
     }
     
-    public func contentType(boundary: String = "", length: Int = -1) -> [String: String] {
-        switch self {
-            case .POST_FORM_DATA, .POST_FILE_FORM_DATA:
-                return [
-                    "Content-Type": "multipart/form-data; boundary=\(boundary)",
-                    "Content-Length": "\(length)"
-                ]
-            case .POST_URL_ENC:
-                return ["Content-Type": "application/x-www-form-urlencoded"]
-            default:
-                return ["Content-Type": "application/json"]
+    public func contentType(contentType: GHRestContentType, boundary: String = "", length: Int = -1) -> [String: String] {
+        switch contentType {
+            case .json:
+                switch self {
+                    case .POST_FORM_DATA, .POST_FILE_FORM_DATA:
+                        return [
+                            "Content-Type": "multipart/form-data; boundary=\(boundary)",
+                            "Content-Length": "\(length)"
+                        ]
+                    case .POST_URL_ENC:
+                        return [
+                            "Content-Type": "application/x-www-form-urlencoded"
+                        ]
+                    default:
+                        return [
+                            "Content-Type": "application/json"
+                        ]
+                }
+            case .xml:
+                switch self {
+                    default:
+                        return [
+                            "Content-Type": "text/xml; charset=utf-8",
+                            "Content-Length": "\(length)"
+                        ]
+                }
         }
     }
 }

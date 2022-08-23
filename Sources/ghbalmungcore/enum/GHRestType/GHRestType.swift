@@ -7,7 +7,7 @@
 
 import Foundation
 
-public enum GHRestType: Equatable {
+public enum GHRestType {
     case GET
     case GET_XML
     case POST
@@ -17,4 +17,9 @@ public enum GHRestType: Equatable {
     case PUT
     case DELETE
     case PATCH
+}
+
+public enum GHRestContentType {
+    case json
+    case xml
 }

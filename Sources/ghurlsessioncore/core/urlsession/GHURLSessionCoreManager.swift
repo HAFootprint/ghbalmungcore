@@ -12,10 +12,10 @@ import ghbalmungcore
 class GHURLSessionCoreManager: GHBaseCoreManager {
     private lazy var _dcConnection: [String: URLSession?]? = [:]
     
-    public override func submitRequest(bundle: Bundle, metadata: GHMetadataModel, restMethod: GHRestType) -> Bool {
+    public override func submitRequest(bundle: Bundle, metadata: GHMetadataModel, restMethod: GHRestType, restContentType: GHRestContentType) -> Bool {
         var messageError:String = .empty
         
-        guard super.submitRequest(bundle: bundle, metadata: metadata, restMethod: restMethod) else {
+        guard super.submitRequest(bundle: bundle, metadata: metadata, restMethod: restMethod, restContentType: restContentType) else {
             return true
         }
         
@@ -27,6 +27,7 @@ class GHURLSessionCoreManager: GHBaseCoreManager {
                     bundle: bundle,
                     metadata: metadata,
                     restMethod: restMethod,
+                    contentType: restContentType,
                     url: nsurl
                 )
                 

@@ -18,7 +18,7 @@ open class GHBaseCoreManager: NSObject, GHCoreBalmungDelegate {
     }
     
     @available(iOS 13.0, *)
-    open func submitRequest(bundle: Bundle, metadata: GHMetadataModel, restMethod: GHRestType) -> AnyPublisher<Any, Error>? {
+    open func submitRequest(bundle: Bundle, metadata: GHMetadataModel, restMethod: GHRestType, restContentType: GHRestContentType) -> AnyPublisher<Any, Error>? {
         if GHDependencyConfigManager.getIdentifierRestServer(bundle: bundle) == .simulation ||
             metadata.forceSimulationFlow {
             
@@ -45,7 +45,7 @@ open class GHBaseCoreManager: NSObject, GHCoreBalmungDelegate {
         return nil
     }
     
-    open func submitRequest(bundle: Bundle, metadata: GHMetadataModel, restMethod: GHRestType) -> Bool {
+    open func submitRequest(bundle: Bundle, metadata: GHMetadataModel, restMethod: GHRestType, restContentType: GHRestContentType) -> Bool {
         if GHDependencyConfigManager.getIdentifierRestServer(bundle: bundle) == .simulation ||
             metadata.forceSimulationFlow {
             
@@ -115,10 +115,11 @@ open class GHBaseCoreManager: NSObject, GHCoreBalmungDelegate {
         bundle: Bundle,
         metadata: GHMetadataModel,
         restMethod: GHRestType,
+        contentType: GHRestContentType,
         url: URL
     ) -> URLRequest {
         var request = URLRequest(url: url)
-        var headers: [String: String] = restMethod.contentType()
+        var headers: [String: String] = restMethod.contentType(contentType: contentType)
         
         request.httpMethod          = restMethod.rawString
         request.timeoutInterval     = GHDependencyConfigManager.timeOutInterval(
@@ -134,7 +135,7 @@ open class GHBaseCoreManager: NSObject, GHCoreBalmungDelegate {
                             let body = GHBalmungTools.createBody(parameters: dic, boundary: boundary)
                             request.httpBody = body
                             
-                            headers = restMethod.contentType(boundary: boundary, length: body.count)
+                            headers = restMethod.contentType(contentType: contentType, boundary: boundary, length: body.count)
                         }
                     }
                     catch {
@@ -150,7 +151,7 @@ open class GHBaseCoreManager: NSObject, GHCoreBalmungDelegate {
                             let body = GHBalmungTools.createFileBody(parameters: dic, boundary: boundary)
                             request.httpBody = body
                             
-                            headers = restMethod.contentType(boundary: boundary, length: body.count)
+                            headers = restMethod.contentType(contentType: contentType, boundary: boundary, length: body.count)
                         }
                     }
                     catch {

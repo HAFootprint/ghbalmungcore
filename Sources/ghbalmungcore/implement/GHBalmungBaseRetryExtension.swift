@@ -24,7 +24,8 @@ extension GHBalmungBase {
                 default:
                     self.doRetryInBackground(
                         metadata: self.metadata,
-                        restMethod: self.restMethod
+                        restMethod: self.restMethod,
+                        restContentType: self.restContentType
                     )
             }
         }
@@ -41,11 +42,12 @@ extension GHBalmungBase {
     }
     
     //MARK: Retry Flow
-    private func doRetryInBackground(metadata: GHMetadataModel, restMethod: GHRestType) {
+    private func doRetryInBackground(metadata: GHMetadataModel, restMethod: GHRestType, restContentType: GHRestContentType) {
         _ = self.coreServiceDelegate?.submitRequest(
             bundle: self.bundle,
             metadata: metadata,
-            restMethod: restMethod
+            restMethod: restMethod,
+            restContentType: restContentType
         )
     }
 }
