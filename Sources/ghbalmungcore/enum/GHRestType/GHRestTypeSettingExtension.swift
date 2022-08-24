@@ -53,10 +53,15 @@ extension GHRestType {
             case .xml:
                 switch self {
                     default:
-                        return [
-                            "Content-Type": "text/xml; charset=utf-8",
-                            "Content-Length": "\(length)"
+                        var dic = [
+                            "Content-Type": "text/xml; charset=utf-8"
                         ]
+                        
+                        if length != -1 {
+                            dic["Content-Length"] = "\(length)"
+                        }
+                        
+                        return dic
                 }
         }
     }
