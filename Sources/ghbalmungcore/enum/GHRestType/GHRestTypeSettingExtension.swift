@@ -6,12 +6,6 @@
 //
 
 extension GHRestType {
-//    public var contentType: GHRestContentType {
-//        switch {
-//            case
-//        }
-//    }
-    
     public var rawString: String {
         switch self {
             case .GET, .GET_XML:

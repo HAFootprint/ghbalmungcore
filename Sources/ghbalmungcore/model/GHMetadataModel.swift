@@ -5,22 +5,34 @@
 //  Created by Javier Carapia on 23/11/21.
 //
 
-public struct GHMetadataModel {
-    public let url: String
-    public let jsonLocalName: String
-    public let certificateAuthority: String?
-    
+import Foundation
+
+public class GHMetadataModel {
+    public var url: String
+    public var certificateAuthority: String?
+    public var type: Any = 0
+    public var forceSimulationFlow: Bool = false
+    public var forceInvalidateAndCancel: Bool = true
     public var params: Any?
     public var headers: [String: String]?
-    public var saveSessionCookies: Bool
-    public var saveServerDate: Bool
     
-    public var type: Any = 0
+    internal var jsonLocalName: String
+    internal var saveSessionCookies: Bool
+    internal var saveServerDate: Bool
+    internal var retryCounter: Int = 0
+    internal var forceTimeOutFlow: TimeInterval?
     
-    public var forceSimulationFlow: Bool = false
-    
-    public var retryCounter: Int = 0
-    public var forceInvalidateAndCancel: Bool = true
+    public init () {
+        self.url = ""
+        self.jsonLocalName = ""
+        self.saveSessionCookies = false
+        self.saveServerDate = false
+        
+        self.certificateAuthority = nil
+        self.params = nil
+        self.headers = nil
+        self.forceTimeOutFlow = nil
+    }
     
     public init(url: String,
                 type: Int,
@@ -29,7 +41,9 @@ public struct GHMetadataModel {
                 certificateAuthority: String = .empty,
                 jsonLocalName: String = .empty,
                 saveSessionCookies: Bool = false,
-                saveServerDate: Bool = false) {
+                saveServerDate: Bool = false,
+                forceTimeOutFlow: TimeInterval? = nil
+    ) {
         self.url = url
         self.type = type
         self.params = params
@@ -38,13 +52,14 @@ public struct GHMetadataModel {
         self.jsonLocalName = jsonLocalName
         self.saveSessionCookies = saveSessionCookies
         self.saveServerDate = saveServerDate
+        self.forceTimeOutFlow = forceTimeOutFlow
     }
     
-    public mutating func setHeaders(headers: [String: String]) {
+    public func setHeaders(headers: [String: String]) {
         self.headers = headers
     }
     
-    public mutating func setParams(params: Any?) {
+    public func setParams(params: Any?) {
         self.params = params
     }
 }

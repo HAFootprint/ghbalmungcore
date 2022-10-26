@@ -6,8 +6,8 @@
         "repositoryURL": "https://github.com/Alamofire/Alamofire.git",
         "state": {
           "branch": null,
-          "revision": "f82c23a8a7ef8dc1a49a8bfc6a96883e79121864",
-          "version": "5.5.0"
+          "revision": "8dd85aee02e39dd280c75eef88ffdb86eed4b07b",
+          "version": "5.6.2"
         }
       },
       {
@@ -15,7 +15,7 @@
         "repositoryURL": "https://git.gonet.us/gnglobaldependencies/ios/ghgungnircore.git",
         "state": {
           "branch": "main",
-          "revision": "04e38ffbc692b1c5cd0e5084066d795796b25e1a",
+          "revision": "bd3208c774d66987a2191bd016e54b40b666c23c",
           "version": null
         }
       }

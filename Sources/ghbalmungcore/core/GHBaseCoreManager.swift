@@ -122,7 +122,7 @@ open class GHBaseCoreManager: NSObject, GHCoreBalmungDelegate {
         var headers: [String: String] = restMethod.contentType(contentType: contentType)
         
         request.httpMethod          = restMethod.rawString
-        request.timeoutInterval     = GHDependencyConfigManager.timeOutInterval(
+        request.timeoutInterval     = metadata.forceTimeOutFlow ?? GHDependencyConfigManager.timeOutInterval(
             bundle: bundle
         )
         
