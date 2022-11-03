@@ -37,22 +37,22 @@ let package = Package(
             url: "https://github.com/Alamofire/Alamofire.git",
                 .upToNextMajor(from: "5.4.0")
         ),
-        //TODO: Global
+//        TODO: Global
 //        .package(
 //            url: "https://gitlab.com/styme1/mobile/ios/dependencies/ghgungnircore.git",
 //            branch: "main"
 //        )
-        //TODO: GoNet
+//        TODO: GoNet
 //        .package(
 //           url: "https://git.gonet.us/gnglobaldependencies/ios/ghgungnircore.git",
 //           branch: "main"
 //        )
-        //TODO: Github
+//        TODO: Github
 //        .package(
 //            url: "https://github.com/StyMe-IOS/ghgungnircore.git",
 //            branch: "main"
 //        )
-        //TODO: HA
+//        TODO: HA
         .package(
             url: "https://github.com/HAFootprint/ghgungnircore.git",
             branch: "main"
