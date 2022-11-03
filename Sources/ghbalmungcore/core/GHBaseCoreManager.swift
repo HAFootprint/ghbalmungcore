@@ -13,6 +13,8 @@ open class GHBaseCoreManager: NSObject, GHCoreBalmungDelegate {
     public var delegate: GHConnectionBalmungDelegate?
     public var certificate: String?
     
+    public lazy var _dcConnection: [String: URLSession]? = [:]
+    
     public override required init() {
         super.init()
     }

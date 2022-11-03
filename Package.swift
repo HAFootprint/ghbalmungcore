@@ -43,15 +43,20 @@ let package = Package(
 //            branch: "main"
 //        )
         //TODO: GoNet
-        .package(
-           url: "https://git.gonet.us/gnglobaldependencies/ios/ghgungnircore.git",
-           branch: "main"
-        )
+//        .package(
+//           url: "https://git.gonet.us/gnglobaldependencies/ios/ghgungnircore.git",
+//           branch: "main"
+//        )
         //TODO: Github
 //        .package(
 //            url: "https://github.com/StyMe-IOS/ghgungnircore.git",
 //            branch: "main"
 //        )
+        //TODO: HA
+        .package(
+            url: "https://github.com/HAFootprint/ghgungnircore.git",
+            branch: "main"
+        )
     ],
     targets: [
         .target(

@@ -10,8 +10,6 @@ import ghgungnircore
 import ghbalmungcore
 
 class GHURLSessionCoreManager: GHBaseCoreManager {
-    private lazy var _dcConnection: [String: URLSession?]? = [:]
-    
     public override func submitRequest(bundle: Bundle, metadata: GHMetadataModel, restMethod: GHRestType, restContentType: GHRestContentType) -> Bool {
         var messageError:String = .empty
         
@@ -34,7 +32,7 @@ class GHURLSessionCoreManager: GHBaseCoreManager {
                 let identifier = String(describing: metadata.type)
                 
                 if metadata.forceInvalidateAndCancel {
-                    _dcConnection?[identifier]??.invalidateAndCancel()
+                    _dcConnection?[identifier]?.invalidateAndCancel()
                     _dcConnection?[identifier] = nil
                 }
                 
@@ -44,7 +42,7 @@ class GHURLSessionCoreManager: GHBaseCoreManager {
                     delegateQueue: OperationQueue()
                 )
                 
-                let task = _dcConnection?[identifier]??.dataTask(with: request, completionHandler: { (data, response, error) in
+                let task = _dcConnection?[identifier]?.dataTask(with: request, completionHandler: { (data, response, error) in
                     let tuple = self.interceptResponse(
                         response: response,
                         metadata: metadata
@@ -117,15 +115,14 @@ class GHURLSessionCoreManager: GHBaseCoreManager {
     }
     
     public override func cancelAllRequest() {
-        _dcConnection?.forEach { $0.value?.invalidateAndCancel() }
+        _dcConnection?.forEach { $0.value.invalidateAndCancel() }
+        _dcConnection?.removeAll()
+        _dcConnection = nil
         
         super.cancelAllRequest()
     }
     
     public override func removeReferenceContext() {
-        _dcConnection?.removeAll()
-        _dcConnection = nil
-        
         super.removeReferenceContext()
     }
 }

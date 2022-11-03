@@ -10,15 +10,8 @@ import Combine
 import ghgungnircore
 import ghbalmungcore
 
-enum NetworkErrors: Error {
-    case badContent
-    case connectionNoDetected(error: Error)
-}
-
 @available(iOS 13.0, *)
 class GHURLSessionRxCoreManager: GHBaseCoreManager, URLSessionDelegate {
-    private lazy var _dcConnection: [String: URLSession]? = [:]
-    
     override func submitRequest(
         bundle: Bundle,
         metadata: GHMetadataModel,
@@ -96,14 +89,13 @@ class GHURLSessionRxCoreManager: GHBaseCoreManager, URLSessionDelegate {
     
     override func cancelAllRequest() {
         _dcConnection?.forEach { $0.value.invalidateAndCancel() }
+        _dcConnection?.removeAll()
+        _dcConnection = nil
         
         super.cancelAllRequest()
     }
     
     public override func removeReferenceContext() {
-        _dcConnection?.removeAll()
-        _dcConnection = nil
-        
         super.removeReferenceContext()
     }
 }
